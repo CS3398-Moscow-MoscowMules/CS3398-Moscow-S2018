@@ -1,4 +1,4 @@
-package se_DungeonsAndDragons;
+package mules.moscow.dungeonsanddragons5echaractersheet;
 
 import java.util.ArrayList;
 
@@ -6,9 +6,12 @@ public class Classes {
 
 	private int playerClass;
 	private ArrayList<String> classList;
+    private ArrayList<Integer> healthList;
+	private int baseHitPoints;
 	
-	public Classes(ArrayList<String> classData){
+	public Classes(ArrayList<String> classData, ArrayList<Integer> healthData){
 		classList = new ArrayList<String>(classData);
+		healthList = new ArrayList<Integer>(healthData);
 		playerClass = -1;
 	}
 	
@@ -26,7 +29,15 @@ public class Classes {
 		this.playerClass = location;
 	}
 
-	
+    public int getBaseHitPoints() {
+        return baseHitPoints;
+    }
+
+    public void setBaseHitPoints() {
+        this.baseHitPoints = healthList.get(playerClass);
+    }
+
+
 	
 /*	public enum Class {
 		Barbarian,

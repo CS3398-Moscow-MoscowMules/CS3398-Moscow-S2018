@@ -3,63 +3,25 @@ import java.util.ArrayList;
 
 public class Languages {
 
-    private ArrayList<String> languageList;
-    private ArrayList<String> standardLanguages;
-    private ArrayList<String> exoticLanguages;
-    private int classExtras;
-    private int backgroundExtras;
-    private int usedClassExtras;
-    private int usedBGExtras;
+    private ArrayList<String> knownLanguages;
+    private ArrayList<String> languages;
+    private int extras;
+    private int used;
 
-    public Languages(ArrayList<String> standardData, ArrayList<String> exoticData, ArrayList<String> startingLangs, int cExtras, int bgExtras){
-        standardLanguages = new ArrayList<String>(standardData);
-        exoticLanguages = new ArrayList<String>(exoticData);
-        languageList = new ArrayList<String>();
+    public Languages(ArrayList<String> languageData, ArrayList<String> startingLangs, int extras){
+        languages = new ArrayList<String>(languageData);
+        knownLanguages = new ArrayList<String>(startingLangs);
 
-        classExtras = cExtras;
-        backgroundExtras = bgExtras;
-        usedClassExtras = 0;
-        usedBGExtras =0;
-
-        while(!startingLangs.isEmpty()) {
-            char lang = startingLangs.get(0).charAt(0);
-            startingLangs.set(0, startingLangs.get(0).substring(1));
-            if (lang == 's'){
-                languageList.add(standardLanguages.get(Integer.parseInt(startingLangs.get(0))));
-                startingLangs.remove(0);
-            } else if(lang == 'e') {
-                languageList.add(exoticLanguages.get(Integer.parseInt(startingLangs.get(0))));
-                startingLangs.remove(0);
-            }
-        }
+        this.extras = extras;
     }
 
     public ArrayList<String> getLanguageList() {
-        return languageList;
+        return knownLanguages;
     }
 
-    public void addLanguage(String newLang, boolean classExtra, boolean bgExtra){
-        if(classExtra) {
-            if (usedClassExtras < classExtras) {
-                char lang = newLang.charAt(0);
-                newLang = newLang.substring(1);
-                if (lang == 's')
-                    languageList.add(standardLanguages.get(Integer.parseInt(newLang)));
-                else if (lang == 'e')
-                    languageList.add(exoticLanguages.get(Integer.parseInt(newLang)));
-                usedClassExtras++;
-            }
-        }
-        else if(bgExtra){
-            if (usedBGExtras < backgroundExtras) {
-                char lang = newLang.charAt(0);
-                newLang = newLang.substring(1);
-                if (lang == 's')
-                    languageList.add(standardLanguages.get(Integer.parseInt(newLang)));
-                else if (lang == 'e')
-                    languageList.add(exoticLanguages.get(Integer.parseInt(newLang)));
-                usedBGExtras++;
-            }
+    public void addLanguage(String newLang){
+        if (used < extras && !knownLanguages.contains(newLang)) {
+            knownLanguages.add(newLang);
         }
     }
 }

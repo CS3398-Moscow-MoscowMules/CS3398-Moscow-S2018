@@ -27,4 +27,6 @@ public interface RaceDAO {
     @Query("SELECT * FROM races WHERE subrace = :subrace")
     public Race loadRaceInfo(String subrace);
 
+    @Query("SELECT language1, language2, language3 FROM races")
+    public List<String> loadLanguages();
 }

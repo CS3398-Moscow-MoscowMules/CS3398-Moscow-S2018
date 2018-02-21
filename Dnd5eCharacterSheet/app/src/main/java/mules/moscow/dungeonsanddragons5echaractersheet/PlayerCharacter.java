@@ -22,11 +22,11 @@ public class PlayerCharacter {
     private AbilityScore wisdom;
     private AbilityScore charisma;
 
-    public PlayerCharacter(ArrayList<String> raceData, ArrayList<String> classData, ArrayList<String> backgroundData,
-                           ArrayList<String> skillData, ArrayList<String> alignmentData, ArrayList<Integer> healthData,
-                           ArrayList<String> featuresData, ArrayList<String> traitData, ArrayList<String> standardData,
-                           ArrayList<String> exoticData, ArrayList<String> startingLangs, int classExtraLangs, int bgExtraLangs,
-                           ArrayList<Integer> classSpeedData){
+    public PlayerCharacter(ArrayList<String> raceData, ArrayList<String> classData, /*ArrayList<String> backgroundData,*/
+                           /*ArrayList<String> skillData,  ArrayList<Integer> healthData, */
+                           ArrayList<String> featuresData, ArrayList<String> traitData,
+                           ArrayList<String> languageData, ArrayList<String> startingLangs
+                           /*ArrayList<Integer> classSpeedData*/){
         ArrayList<ArrayList<Boolean>> classSkillsData = new ArrayList<ArrayList<Boolean>>();
         //replace block with database code later
         classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, true, false, true, false, false, false, true, false, false, true, true, false, false, false, false, false, true));
@@ -42,16 +42,27 @@ public class PlayerCharacter {
         classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, false, true, false, true, true, false, true, true, false, true, false, false, false, true, false, false, false));
         classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, false, true, false, false, true, true, false, true, true, false, false, false, false, true, false, false, false));
 
+        int extraLangs=0;
+        for(int i =0; i<startingLangs.size(); i++){
+            if(startingLangs.get(i).equals(null))
+                startingLangs.remove(i);
+            else if (startingLangs.get(i).equals("Extra")) {
+                extraLangs++;
+                startingLangs.remove(i);
+            }
+        }
+
+
         playerRace = new Races(raceData);
-        playerClass = new Classes(classData, healthData);
-        playerBackground = new Backgrounds(backgroundData);
-        playerAlignment = new Alignments(alignmentData);
-        playerSkills = new Skills(skillData, classSkillsData);
+        //playerClass = new Classes(classData, healthData);
+        //playerBackground = new Backgrounds(backgroundData);
+        //playerAlignment = new Alignments(alignmentData);
+        //playerSkills = new Skills(skillData, classSkillsData);
         hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();
         playerFeatures = new Features(featuresData);
         playerTraits = new Traits(traitData);
-        playerLanguages = new Languages(standardData, exoticData, startingLangs, classExtraLangs, bgExtraLangs);
-        playerSpeed = new Speed(classSpeedData, playerClass.getPlayerClass());
+        playerLanguages = new Languages(languageData, startingLangs, extraLangs);
+        //playerSpeed = new Speed(classSpeedData, playerClass.getPlayerClass());
 
         strength = new AbilityScore(0, new ArrayList<Integer>(Arrays.asList(0, 0, 0, 1, 2, 0, 0, 2, 0)));
         dexterity = new AbilityScore(0, new ArrayList<Integer>(Arrays.asList(0, 2, 2, 1, 0, 0, 0, 0, 0)));
@@ -95,7 +106,7 @@ public class PlayerCharacter {
     }
 
     public void addLanguage(String newLang, boolean classExtra, boolean bgExtra){
-        playerLanguages.addLanguage(newLang, classExtra, bgExtra);
+        playerLanguages.addLanguage(newLang);
     }
 
     public ArrayList<String> getPlayerLanguages(){

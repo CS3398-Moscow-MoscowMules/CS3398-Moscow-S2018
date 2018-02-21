@@ -16,6 +16,9 @@ public interface ClassFeatureDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public void insertClassFeatures(ClassFeature... classFeatures);
 
+    @Query("SELECT title FROM class_features")
+    public List<String> loadFeatures();
+
     @Query("SELECT title FROM class_features WHERE  cfid = :cfid")
     public String loadTitleOfClassFeatureByID(int cfid);
 

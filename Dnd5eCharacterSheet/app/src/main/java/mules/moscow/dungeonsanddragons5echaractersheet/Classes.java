@@ -6,19 +6,32 @@ public class Classes {
 
 	private int playerClass;
 	private ArrayList<String> classList;
-    private ArrayList<Integer> healthList;
+        private ArrayList<Integer> healthList;
 	private int baseHitPoints;
 	
+        /**
+         * constructor for Classes class
+         * @param classData contains all available player classes
+         * @param healthData contains health data
+         */
 	public Classes(ArrayList<String> classData, ArrayList<Integer> healthData){
 		classList = new ArrayList<String>(classData);
 		healthList = new ArrayList<Integer>(healthData);
 		playerClass = -1;
 	}
 	
+        /**
+         * returns the player's class
+         * @return the player's class
+         */
 	public int getPlayerClass() {
 		return playerClass;
 	}
 
+        /**
+         * Sets the player's class
+         * @param playerClass the class to be given to the player
+         */
 	public void setPlayerClass(String playerClass) {
 		int location=-1;
 		for(int i=0; i<classList.size(); i++) {
@@ -29,13 +42,20 @@ public class Classes {
 		this.playerClass = location;
 	}
 
-    public int getBaseHitPoints() {
-        return baseHitPoints;
-    }
+        /**
+         * returns the player's base hit points
+         * @return the player's bas hit points
+         */
+        public int getBaseHitPoints() {
+            return baseHitPoints;
+        }
 
-    public void setBaseHitPoints() {
-        this.baseHitPoints = healthList.get(playerClass);
-    }
+        /**
+         * Sets the player's base hit points based on the player's class
+         */
+        public void setBaseHitPoints() {
+            this.baseHitPoints = healthList.get(playerClass);
+        }
 
 
 	

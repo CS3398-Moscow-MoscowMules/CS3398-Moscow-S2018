@@ -7,10 +7,21 @@ public class AbilityScore {
 	private ArrayList<Integer> RaceModifiers = new ArrayList<Integer>();
 	private ArrayList<Integer> ClassModifiers = new ArrayList<Integer>();
 	
+        /**
+         * AbilityScore constructor. Adds all race modifiers to the ability score.
+         * @param base The base score rolled for the player
+         * @param RaceList List containing races and their modifiers(?)
+         */
 	AbilityScore(int base, ArrayList<Integer> RaceList){
 		RaceModifiers.addAll(RaceList);
 	}
 	
+        /**
+         * Sets the modifier for the player's ability score
+         * @param num The base score rolled for the player
+         * @param raceIndex The modifier for the score given the player's race
+         * @param classIndex The modifier for the score given the player's class(?)
+         */
 	public void setScore(int num, int raceIndex, int classIndex) {
 		this.score = num + RaceModifiers.get(raceIndex) + ClassModifiers.get(classIndex);
 
@@ -39,9 +50,17 @@ public class AbilityScore {
 		}
 	}
 	
+        /**
+         * returns the player's ability score
+         * @return the player's ability score
+         */
 	public int getScore() {
 		return this.score;
 	}
 
+        /**
+         * returns the player's ability score modifier
+         * @return the player's ability score modifier
+         */
 	public int getModifier() { return this.modifier; }
 }

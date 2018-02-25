@@ -32,24 +32,11 @@ public class PlayerCharacter {
      * @param startingLangs 
      */
     public PlayerCharacter(ArrayList<String> raceData, ArrayList<String> classData, /*ArrayList<String> backgroundData,*/
-                           /*ArrayList<String> skillData,  ArrayList<Integer> healthData, */
+                           /*ArrayList<String> skillData,*/  ArrayList<Integer> healthData,
                            ArrayList<String> featuresData, ArrayList<String> traitData,
-                           ArrayList<String> languageData, ArrayList<String> startingLangs
-                           /*ArrayList<Integer> classSpeedData*/){
-        ArrayList<ArrayList<Boolean>> classSkillsData = new ArrayList<ArrayList<Boolean>>();
-        //replace block with database code later
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, true, false, true, false, false, false, true, false, false, true, true, false, false, false, false, false, true));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, false, false, false, false, true, true, false, false, true, false, false, false, true, true, false, false, false));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, true, true, false, false, false, true, false, false, true, true, true, false, false, true, false, false, true));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(true, true, false, true, false, true, true, true, false, false, false, true, false, false, false, false, false, true));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(true, false, false, true, false, true, true, false, false, false, false, false, false, false, true, false, true, false));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, false, false, true, false, false, true, true, false, true, false, false, false, true, true, false, false, false));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, true, false, true, false, false, true, false, true, false, true, true, false, false, false, false, true, true));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(true, false, false, true, true, false, true, true, true, false, false, true, true, true, false, true, true, false));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, false, true, false, true, false, true, true, false, false, false, false, false, true, true, false, false, false));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, false, true, false, true, true, false, true, true, false, true, false, false, false, true, false, false, false));
-        classSkillsData.add((ArrayList<Boolean>) Arrays.asList(false, false, true, false, false, true, true, false, true, true, false, false, false, false, true, false, false, false));
+                           ArrayList<String> languageData, ArrayList<String> startingLangs,
+                           ArrayList<Integer> classSpeedData, ArrayList<ArrayList<Integer>> modifierData,
+                           ArrayList<ArrayList<Boolean>> classSkillsData){
 
         int extraLangs=0;
         for(int i =0; i<startingLangs.size(); i++){
@@ -63,7 +50,7 @@ public class PlayerCharacter {
 
 
         playerRace = new Races(raceData);
-        //playerClass = new Classes(classData, healthData);
+        playerClass = new Classes(classData, healthData);
         //playerBackground = new Backgrounds(backgroundData);
         //playerAlignment = new Alignments(alignmentData);
         //playerSkills = new Skills(skillData, classSkillsData);
@@ -71,14 +58,14 @@ public class PlayerCharacter {
         playerFeatures = new Features(featuresData);
         playerTraits = new Traits(traitData);
         playerLanguages = new Languages(languageData, startingLangs, extraLangs);
-        //playerSpeed = new Speed(classSpeedData, playerClass.getPlayerClass());
+        playerSpeed = new Speed(classSpeedData, playerClass.getPlayerClass());
 
-        strength = new AbilityScore(0, new ArrayList<Integer>(Arrays.asList(0, 0, 0, 1, 2, 0, 0, 2, 0)));
-        dexterity = new AbilityScore(0, new ArrayList<Integer>(Arrays.asList(0, 2, 2, 1, 0, 0, 0, 0, 0)));
-        constitution = new AbilityScore(0, new ArrayList<Integer>(Arrays.asList(2, 0, 0, 1, 0, 0, 0, 1, 0)));
-        intelligence = new AbilityScore(0, new ArrayList<Integer>(Arrays.asList(0, 0, 0, 1, 0, 2, 0, 0, 1)));
-        wisdom = new AbilityScore(0, new ArrayList<Integer>(Arrays.asList(0, 0, 0, 1, 0, 0, 0, 0, 0)));
-        charisma = new AbilityScore(0, new ArrayList<Integer>(Arrays.asList(0, 0, 0, 1, 1, 0, 2, 0, 2)));
+        strength = new AbilityScore(0, modifierData.get(0));
+        dexterity = new AbilityScore(0, modifierData.get(1));
+        constitution = new AbilityScore(0, modifierData.get(2));
+        intelligence = new AbilityScore(0, modifierData.get(3));
+        wisdom = new AbilityScore(0, modifierData.get(4));
+        charisma = new AbilityScore(0, modifierData.get(5));
         //increase Half elf by 1 for two of choice
     }
 

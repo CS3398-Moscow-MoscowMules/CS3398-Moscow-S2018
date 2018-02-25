@@ -22,4 +22,7 @@ public interface ClassDAO {
     @Query("SELECT class FROM classes WHERE cid = :cid")
     public Class loadClassByID(int cid);
 
+    @Query("SELECT health FROM classes")
+    public List<Integer> loadHealths();
+
 }

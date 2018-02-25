@@ -5,6 +5,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.OnConflictStrategy;
 import java.util.List;
+import java.util.ArrayList;
 /**
  * Created by HEYSCOTT on 2/13/18.
  */
@@ -29,4 +30,28 @@ public interface RaceDAO {
 
     @Query("SELECT language1, language2, language3 FROM races")
     public List<String> loadLanguages();
+
+    @Query("SELECT speed FROM races")
+    public List<Integer> loadSpeeds();
+
+    @Query("SELECT strMod FROM races")
+    public List<Integer> loadStrMods();
+
+    @Query("SELECT dexModMod FROM races")
+    public List<Integer> loadDexMods();
+
+    @Query("SELECT conMod FROM races")
+    public List<Integer> loadConMods();
+
+    @Query("SELECT intMod FROM races")
+    public List<Integer> loadIntMods();
+
+    @Query("SELECT wisMod FROM races")
+    public List<Integer> loadWisMods();
+
+    @Query("SELECT chaMod FROM races")
+    public List<Integer> loadChaMods();
+
+    @Query("SELECT skills FROM races")
+    public ArrayList<ArrayList<Boolean>> loadSkills();
 }

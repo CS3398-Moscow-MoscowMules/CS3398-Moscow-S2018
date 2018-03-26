@@ -1,6 +1,7 @@
 package mules.moscow.dungeonsanddragons5echaractersheet;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Alignments {
 
@@ -9,10 +10,10 @@ public class Alignments {
 	
         /**
          * constructor for the Alignment class.
-         * @param alignmentData includes all available alignments
          */
-	public Alignments(ArrayList<String> alignmentData) {
-		alignmentList = new ArrayList<String>(alignmentData);
+	public Alignments() {
+		alignmentList = new ArrayList<String>(Arrays.asList("Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral",
+				"True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"));
 		setPlayerAlignment(null);
 	}
 
@@ -31,6 +32,10 @@ public class Alignments {
 	public String getPlayerAlignment() {
 		return playerAlignment;
 	}
+
+	public ArrayList<String> getAlignmentList(){
+	    return alignmentList;
+    }
 
 	
 }

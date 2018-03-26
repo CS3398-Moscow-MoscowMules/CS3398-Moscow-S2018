@@ -25,4 +25,8 @@ public interface ClassDAO {
     @Query("SELECT health FROM classes")
     public List<Integer> loadHealths();
 
+    /*
+    @Query("SELECT skills FROM classes")
+    public ArrayList<ArrayList<Boolean>> loadSkills(); */
+
 }

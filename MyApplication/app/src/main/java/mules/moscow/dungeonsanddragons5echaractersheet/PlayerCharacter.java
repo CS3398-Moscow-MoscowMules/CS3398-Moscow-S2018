@@ -52,7 +52,7 @@ public class PlayerCharacter {
         playerRace = new Races(raceData);
         playerClass = new Classes(classData, healthData);
         //playerBackground = new Backgrounds(backgroundData);
-        //playerAlignment = new Alignments(alignmentData);
+        playerAlignment = new Alignments();
         //playerSkills = new Skills(skillData, classSkillsData);
         hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();
         playerFeatures = new Features(featuresData);

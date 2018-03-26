@@ -28,14 +28,14 @@ public interface RaceDAO {
     @Query("SELECT * FROM races WHERE subrace = :subrace")
     public Race loadRaceInfo(String subrace);
 
-    @Query("SELECT language1 FROM races")
-    public String loadLanguage1();
+    @Query("SELECT language1 FROM races WHERE race = :race")
+    public String loadLanguage1(String race);
 
-    @Query("SELECT language2 FROM races")
-    public String loadLanguage2();
+    @Query("SELECT language2 FROM races WHERE race = :race")
+    public String loadLanguage2(String race);
 
-    @Query("SELECT language3 FROM races")
-    public String loadLanguage3();
+    @Query("SELECT language3 FROM races WHERE race = :race")
+    public String loadLanguage3(String race);
 
     @Query("SELECT speed FROM races")
     public List<Integer> loadSpeeds();
@@ -57,7 +57,5 @@ public interface RaceDAO {
 
     @Query("SELECT chaMod FROM races")
     public List<Integer> loadChaMods();
-/*
-    @Query("SELECT skills FROM races")
-    public ArrayList<ArrayList<Boolean>> loadSkills(); */
+
 }

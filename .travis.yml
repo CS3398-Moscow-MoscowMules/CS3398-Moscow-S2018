@@ -7,7 +7,7 @@ jdk:
 branches:
   only:
     - master
-    - ScottJones
+    - Scott-Jones
 
 after_success:
   - mvn clean test jacoco:report coveralls:report

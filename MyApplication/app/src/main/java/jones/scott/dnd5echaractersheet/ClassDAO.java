@@ -19,14 +19,60 @@ public interface ClassDAO {
     @Query("SELECT class FROM classes")
     public List<String> loadClasses();
 
-/*    @Query("SELECT class FROM classes WHERE cid = :cid")
-    public Class loadClassByID(int cid);*/
-
     @Query("SELECT health FROM classes")
     public List<Integer> loadHealths();
 
-    /*
-    @Query("SELECT skills FROM classes")
-    public ArrayList<ArrayList<Boolean>> loadSkills(); */
+    @Query("SELECT acrobatics FROM classes WHERE class = :className")
+    public int loadAcrobatics(String className);
 
+    @Query("SELECT animalHandling FROM classes WHERE class = :className")
+    public int loadAnimalHandling(String className);
+
+    @Query("SELECT arcana FROM classes WHERE class = :className")
+    public int loadArcana(String className);
+
+    @Query("SELECT athletics FROM classes WHERE class = :className")
+    public int loadAthletics(String className);
+
+    @Query("SELECT deception FROM classes WHERE class = :className")
+    public int loadDeception(String className);
+
+    @Query("SELECT history FROM classes WHERE class = :className")
+    public int loadHistory(String className);
+
+    @Query("SELECT insight FROM classes WHERE class = :className")
+    public int loadInsight(String className);
+
+    @Query("SELECT intimidation FROM classes WHERE class = :className")
+    public int loadIntimidation(String className);
+
+    @Query("SELECT investigation FROM classes WHERE class = :className")
+    public int loadInvestigation(String className);
+
+    @Query("SELECT medicine FROM classes WHERE class = :className")
+    public int loadMedicine(String className);
+
+    @Query("SELECT nature FROM classes WHERE class = :className")
+    public int loadNature(String className);
+
+    @Query("SELECT perception FROM classes WHERE class = :className")
+    public int loadPerception(String className);
+
+    @Query("SELECT performance FROM classes WHERE class = :className")
+    public int loadPerformance(String className);
+
+    @Query("SELECT persuasion FROM classes WHERE class = :className")
+    public int loadPersuasion(String className);
+
+    @Query("SELECT religion FROM classes WHERE class = :className")
+    public int loadReligion(String className);
+
+    @Query("SELECT sleightOfHand FROM classes WHERE class = :className")
+    public int loadSleightOfHand(String className);
+
+    @Query("SELECT stealth FROM classes WHERE class = :className")
+    public int loadStealth(String className);
+
+    @Query("SELECT survival FROM classes WHERE class = :className")
+    public int loadSurvival(String className);
 }

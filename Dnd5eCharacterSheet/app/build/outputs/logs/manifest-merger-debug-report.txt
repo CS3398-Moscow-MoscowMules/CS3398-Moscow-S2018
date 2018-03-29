@@ -1,0 +1,169 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:1:1-11:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2b16d37bdcb077e2376133fcd1a958b9/AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.paging:runtime:1.0.0-alpha5] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0-alpha5.aar/6f2580e37d579259005c88d0139b2d14/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:extensions:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/extensions-1.1.0.aar/22ff050b02e66c50d7d014e3d9cc61d5/AndroidManifest.xml:17:1-30:12
+MERGED from [android.arch.persistence.room:runtime:1.0.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/105dbd82fe7b247fda28c9d119aac831/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/109388cc8ca7407f0f29e7c99ee81898/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8d676603a9afb3f9dea28b9a1a0b4784/AndroidManifest.xml:17:1-28:12
+MERGED from [android.arch.lifecycle:livedata:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/livedata-1.1.0.aar/14d3e680cc09d2b56fa057154347a419/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/c5e38ab8408ce2d028128a2c016935b0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/eb05ce93da314e5f07b0a6b0afdf07fb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/4bedc5f6549527e2120d36fcad26f086/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/5ddf9aea14fe67586e707410b40363d8/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/45184344630b36721c8542e0fd0c4e25/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/624ce88118fdb4e6adf91f812a2f3ca6/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/86cb766813839eefdcb851d81a878d71/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/402280cfd6e5dd3ca1d45e34a607687e/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/a7f87d413458cc38ba9bd74def878a43/AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a67fa467f9dca688157093863ce1db09/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4e60fa0f36ce5399dbcd51d16d23fae6/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db-framework:1.0.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/db-framework-1.0.0.aar/35390d71cdabbadc74ae34cedbafeb67/AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.persistence:db:1.0.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/db-1.0.0.aar/34d01db8de29e2c1a7655307264c295f/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:1:1-11:12
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:1:1-11:12
+	package
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:2:5-46
+		INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:1:1-11:12
+		INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:1:1-11:12
+		INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:4:5-10:43
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2b16d37bdcb077e2376133fcd1a958b9/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2b16d37bdcb077e2376133fcd1a958b9/AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:extensions:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/extensions-1.1.0.aar/22ff050b02e66c50d7d014e3d9cc61d5/AndroidManifest.xml:22:5-28:19
+MERGED from [android.arch.lifecycle:extensions:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/extensions-1.1.0.aar/22ff050b02e66c50d7d014e3d9cc61d5/AndroidManifest.xml:22:5-28:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/109388cc8ca7407f0f29e7c99ee81898/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/109388cc8ca7407f0f29e7c99ee81898/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8d676603a9afb3f9dea28b9a1a0b4784/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8d676603a9afb3f9dea28b9a1a0b4784/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/4bedc5f6549527e2120d36fcad26f086/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/4bedc5f6549527e2120d36fcad26f086/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/5ddf9aea14fe67586e707410b40363d8/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/5ddf9aea14fe67586e707410b40363d8/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/45184344630b36721c8542e0fd0c4e25/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/45184344630b36721c8542e0fd0c4e25/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/624ce88118fdb4e6adf91f812a2f3ca6/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/624ce88118fdb4e6adf91f812a2f3ca6/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/86cb766813839eefdcb851d81a878d71/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/86cb766813839eefdcb851d81a878d71/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/402280cfd6e5dd3ca1d45e34a607687e/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/402280cfd6e5dd3ca1d45e34a607687e/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/a7f87d413458cc38ba9bd74def878a43/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/a7f87d413458cc38ba9bd74def878a43/AndroidManifest.xml:25:5-29:19
+	android:supportsRtl
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:9:9-35
+	android:label
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:7:9-41
+	android:roundIcon
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:8:9-54
+	android:icon
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:6:9-43
+	android:allowBackup
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:5:9-35
+	android:theme
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml:10:9-40
+uses-sdk
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2b16d37bdcb077e2376133fcd1a958b9/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2b16d37bdcb077e2376133fcd1a958b9/AndroidManifest.xml:21:5-23:78
+MERGED from [android.arch.paging:runtime:1.0.0-alpha5] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0-alpha5.aar/6f2580e37d579259005c88d0139b2d14/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.paging:runtime:1.0.0-alpha5] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0-alpha5.aar/6f2580e37d579259005c88d0139b2d14/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:extensions:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/extensions-1.1.0.aar/22ff050b02e66c50d7d014e3d9cc61d5/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:extensions:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/extensions-1.1.0.aar/22ff050b02e66c50d7d014e3d9cc61d5/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence.room:runtime:1.0.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/105dbd82fe7b247fda28c9d119aac831/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence.room:runtime:1.0.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/105dbd82fe7b247fda28c9d119aac831/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/109388cc8ca7407f0f29e7c99ee81898/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/109388cc8ca7407f0f29e7c99ee81898/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8d676603a9afb3f9dea28b9a1a0b4784/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8d676603a9afb3f9dea28b9a1a0b4784/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/livedata-1.1.0.aar/14d3e680cc09d2b56fa057154347a419/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/livedata-1.1.0.aar/14d3e680cc09d2b56fa057154347a419/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/c5e38ab8408ce2d028128a2c016935b0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/c5e38ab8408ce2d028128a2c016935b0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/eb05ce93da314e5f07b0a6b0afdf07fb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/eb05ce93da314e5f07b0a6b0afdf07fb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/4bedc5f6549527e2120d36fcad26f086/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/4bedc5f6549527e2120d36fcad26f086/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/5ddf9aea14fe67586e707410b40363d8/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/5ddf9aea14fe67586e707410b40363d8/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/45184344630b36721c8542e0fd0c4e25/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/45184344630b36721c8542e0fd0c4e25/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/624ce88118fdb4e6adf91f812a2f3ca6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/624ce88118fdb4e6adf91f812a2f3ca6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/86cb766813839eefdcb851d81a878d71/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/86cb766813839eefdcb851d81a878d71/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/402280cfd6e5dd3ca1d45e34a607687e/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/402280cfd6e5dd3ca1d45e34a607687e/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/a7f87d413458cc38ba9bd74def878a43/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/a7f87d413458cc38ba9bd74def878a43/AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a67fa467f9dca688157093863ce1db09/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a67fa467f9dca688157093863ce1db09/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4e60fa0f36ce5399dbcd51d16d23fae6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4e60fa0f36ce5399dbcd51d16d23fae6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.0.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/db-framework-1.0.0.aar/35390d71cdabbadc74ae34cedbafeb67/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db-framework:1.0.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/db-framework-1.0.0.aar/35390d71cdabbadc74ae34cedbafeb67/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db:1.0.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/db-1.0.0.aar/34d01db8de29e2c1a7655307264c295f/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db:1.0.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/db-1.0.0.aar/34d01db8de29e2c1a7655307264c295f/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2b16d37bdcb077e2376133fcd1a958b9/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+		ADDED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/HEYSCOTT/Desktop/SoftwareEngineering/Dnd5eCharacterSheet/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2b16d37bdcb077e2376133fcd1a958b9/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/109388cc8ca7407f0f29e7c99ee81898/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/109388cc8ca7407f0f29e7c99ee81898/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8d676603a9afb3f9dea28b9a1a0b4784/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/8d676603a9afb3f9dea28b9a1a0b4784/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/4bedc5f6549527e2120d36fcad26f086/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/4bedc5f6549527e2120d36fcad26f086/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/5ddf9aea14fe67586e707410b40363d8/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/5ddf9aea14fe67586e707410b40363d8/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/45184344630b36721c8542e0fd0c4e25/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/45184344630b36721c8542e0fd0c4e25/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/624ce88118fdb4e6adf91f812a2f3ca6/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/624ce88118fdb4e6adf91f812a2f3ca6/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/86cb766813839eefdcb851d81a878d71/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/86cb766813839eefdcb851d81a878d71/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/402280cfd6e5dd3ca1d45e34a607687e/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/402280cfd6e5dd3ca1d45e34a607687e/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/a7f87d413458cc38ba9bd74def878a43/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/a7f87d413458cc38ba9bd74def878a43/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2b16d37bdcb077e2376133fcd1a958b9/AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/2b16d37bdcb077e2376133fcd1a958b9/AndroidManifest.xml:27:13-51
+provider#android.arch.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [android.arch.lifecycle:extensions:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/extensions-1.1.0.aar/22ff050b02e66c50d7d014e3d9cc61d5/AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [android.arch.lifecycle:extensions:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/extensions-1.1.0.aar/22ff050b02e66c50d7d014e3d9cc61d5/AndroidManifest.xml:25:13-68
+	android:multiprocess
+		ADDED from [android.arch.lifecycle:extensions:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/extensions-1.1.0.aar/22ff050b02e66c50d7d014e3d9cc61d5/AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [android.arch.lifecycle:extensions:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/extensions-1.1.0.aar/22ff050b02e66c50d7d014e3d9cc61d5/AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [android.arch.lifecycle:extensions:1.1.0] /Users/HEYSCOTT/.gradle/caches/transforms-1/files-1.1/extensions-1.1.0.aar/22ff050b02e66c50d7d014e3d9cc61d5/AndroidManifest.xml:24:13-83

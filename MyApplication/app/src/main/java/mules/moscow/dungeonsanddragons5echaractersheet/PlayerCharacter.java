@@ -55,10 +55,10 @@ public class PlayerCharacter {
         playerAlignment = new Alignments();
         //playerSkills = new Skills(skillData, classSkillsData);
         hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();
-        playerFeatures = new Features(featuresData);
-        playerTraits = new Traits(traitData);
+        playerFeatures = new Features(featuresData);                                //Does this need anything aditional to make it happen? (looks like no)
+        playerTraits = new Traits(traitData);                                       //Does this need anything aditional to make it happen? (looks like no)
         //playerLanguages = new Languages(languageData, startingLangs, extraLangs);
-        playerSpeed = new Speed(classSpeedData, playerClass.getPlayerClass());
+        playerSpeed = new Speed(classSpeedData, playerClass.getPlayerClass());      //Does this need anything aditional to make it happen? (looks like no)
 
         strength = new AbilityScore(0, modifierData.get(0));
         dexterity = new AbilityScore(0, modifierData.get(1));
@@ -69,6 +69,30 @@ public class PlayerCharacter {
         //increase Half elf by 1 for two of choice
     }
 
+    /**
+     * allows the playerRace to be set individually from PlayerCharacter
+     * @param playerRace the player's chosen race
+     */
+    public void setPlayerRace( String playerRace ) {
+        playerRace.setPlayerRace( playerRace );
+    }
+    
+    /**
+     * allows the playerClass to be set individually from PlayerCharacter
+     * @param playerClass the player's chosen class
+     */
+    public void setPlayerClass( String playerClass ) {
+        playerClass.setPlayerClass( playerClass );
+    }
+    
+    /**
+     * allows the playerAlignment to be set individually from PlayerCharacter
+     * @param playerAlignment the player's chosen alignment
+     */
+    public void setPlayerAlignment( String playerAlignment ) {
+        playerAlignment.setPlayerAlignment( playerAlignment );
+    }
+    
 
     /**
      * returns the player's race

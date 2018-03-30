@@ -55,10 +55,10 @@ public class PlayerCharacter {
         playerAlignment = new Alignments();
         //playerSkills = new Skills(skillData, classSkillsData);
         hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();
-        playerFeatures = new Features(featuresData);                                //Does this need anything aditional to make it happen? (looks like no)
-        playerTraits = new Traits(traitData);                                       //Does this need anything aditional to make it happen? (looks like no)
+        playerFeatures = new Features(featuresData);                                //Does this need anything aditional to make it happen? (looks like no?)
+        playerTraits = new Traits(traitData);                                       //Does this need anything aditional to make it happen? (looks like no?)
         //playerLanguages = new Languages(languageData, startingLangs, extraLangs);
-        playerSpeed = new Speed(classSpeedData, playerClass.getPlayerClass());      //Does this need anything aditional to make it happen? (looks like no)
+              
 
         strength = new AbilityScore(0, modifierData.get(0));
         dexterity = new AbilityScore(0, modifierData.get(1));
@@ -69,6 +69,7 @@ public class PlayerCharacter {
         //increase Half elf by 1 for two of choice
     }
 
+    // Things that don't depend on other things when being set
     /**
      * allows the playerRace to be set individually from PlayerCharacter
      * @param playerRace the player's chosen race
@@ -83,6 +84,7 @@ public class PlayerCharacter {
      */
     public void setPlayerClass( String playerClass ) {
         playerClass.setPlayerClass( playerClass );
+        setPlayerSpeed( playerClass );
     }
     
     /**
@@ -91,6 +93,18 @@ public class PlayerCharacter {
      */
     public void setPlayerAlignment( String playerAlignment ) {
         playerAlignment.setPlayerAlignment( playerAlignment );
+    }
+    
+    //background (make later)
+    
+    
+    /**
+     * This is called automatically when playerClass is set
+     * @param p 
+     */
+    public void setPlayerSpeed( playerClass p )
+    {
+        playerSpeed = new Speed(classSpeedData, p.getPlayerClass());
     }
     
 
@@ -184,6 +198,8 @@ public class PlayerCharacter {
         return playerSpeed;
     }
 
+    //ability scores (race and class)
+    
     /**
      * Sets the player's strength score
      * @param str the strength rolled for the player

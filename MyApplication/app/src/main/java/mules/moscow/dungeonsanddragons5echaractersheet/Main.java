@@ -50,8 +50,10 @@ public class Main {
 
     DatabaseToGui dbToGui = new DatabaseToGui(raceData, classData, backgroundData, alignmentList, languageData);
 
-    private PlayerCharacter character = new PlayerCharacter(raceData, classData, /*backgroundData, skillData, */healthData,
-            featureData, traitData, languageData, /*startingLangs, */speedData, modifierData/*, skillData*/);
+    //We will want to do this from the GUI, not here. Will delete later.
+    //private PlayerCharacter character = new PlayerCharacter(raceData, classData, /*backgroundData, skillData, */healthData,
+    //        featureData, traitData, languageData, /*startingLangs, */speedData, modifierData/*, skillData*/);
+
 
 
 }

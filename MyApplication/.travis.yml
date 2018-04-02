@@ -7,4 +7,4 @@ branches:
       -Mike-A13
 
 after success:
-	-bash <(curl -s https://codecov.io/bash)
+   -bash <(curl -s https://codecov.io/bash)

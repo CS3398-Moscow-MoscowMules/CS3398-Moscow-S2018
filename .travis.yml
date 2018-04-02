@@ -7,7 +7,6 @@ jdk:
 branches:
   only:
     - Sarah
-    - Becca-A13
 
 after_success:
   - mvn clean test jacoco:report coveralls:report

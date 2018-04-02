@@ -12,3 +12,8 @@ android:
 		- 'android-sdk-license-.+'
 		- 'google-gdk-license-.+'
 
+#Whitelist
+branches:
+	only:
+		-Mike-A13
+

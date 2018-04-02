@@ -14,5 +14,4 @@ android:
 #Whitelist
 branches:
   only:
-    -development
-    -Becca-A13
+    - Becca-A13

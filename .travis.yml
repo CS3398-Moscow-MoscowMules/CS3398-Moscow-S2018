@@ -11,3 +11,7 @@
 +		- 'android-sdk-preview-license-52d11cd2'
 +		- 'android-sdk-license-.+'
 +		- 'google-gdk-license-.+'
+#Whitelist
+branches:
+	only:
+		-Becca-A13

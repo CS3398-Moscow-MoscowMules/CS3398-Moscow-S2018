@@ -1,12 +1,13 @@
-language: java
-
-jdk:
-  - oraclejdk8
-
-# whitelist
-branches:
-  only:
-    - Sarah
-
-after_success:
-  - mvn clean test jacoco:report coveralls:report
++language: android
++android:
++	components:
++		-tools
++		-platform-tools
++		-tools
++		-build-tools-28.0.0
++		-android-28
++
++	licenses:
++		- 'android-sdk-preview-license-52d11cd2'
++		- 'android-sdk-license-.+'
++		- 'google-gdk-license-.+'

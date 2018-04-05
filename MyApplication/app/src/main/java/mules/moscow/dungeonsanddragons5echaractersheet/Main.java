@@ -22,7 +22,7 @@ public class Main {
     ArrayList<String> languageData=  new ArrayList<>((ArrayList<String>)database.languageDAO().loadLanguages());
 
     ArrayList<Integer> speedData=  new ArrayList<>((ArrayList<Integer>)database.raceDAO().loadSpeeds());
-    ArrayList<String> alignmentList = alignments.getAlignmentList();
+    //ArrayList<String> alignmentList = alignments.getAlignmentList();
     /*
     ArrayList<ArrayList<String>> startingLangs=  new ArrayList<>();
     int i =0;
@@ -48,10 +48,10 @@ public class Main {
             (ArrayList<Integer>)database.raceDAO().loadIntMods(), (ArrayList<Integer>)database.raceDAO().loadWisMods(),
             (ArrayList<Integer>)database.raceDAO().loadChaMods()));
 
-    DatabaseToGui dbToGui = new DatabaseToGui(raceData, classData, backgroundData, alignmentList, languageData);
+    //DatabaseToGui dbToGui = new DatabaseToGui(raceData, classData, backgroundData, alignmentList, languageData);
 
-    private PlayerCharacter character = new PlayerCharacter(raceData, classData, /*backgroundData, skillData, */healthData,
-            featureData, traitData, languageData, /*startingLangs, */speedData, modifierData/*, skillData*/);
+   // private PlayerCharacter character = new PlayerCharacter(raceData, classData, /*backgroundData, skillData, */healthData,
+   //         featureData, traitData, languageData, /*startingLangs, */speedData, modifierData/*, skillData*/);
 
 
 }

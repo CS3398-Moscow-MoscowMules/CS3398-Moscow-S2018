@@ -588,5 +588,11 @@
     <string name="Intimid">Intimidation</string>
     <string name="Performance">Performance</string>
     <string name="Persuasion">Persuasion</string>
+    
+    <string name="save">Save</string>
+
+    <!--Strings and String arrays used in View Character page-->
+
+    <string name="hintSelChar">Select Character</string>
 
 </resources>

@@ -11,10 +11,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.view.View;
-
+import com.google.gson.Gson;
+import java.util.HashSet;
+import java.util.Set;
 import mules.moscow.dungeonsanddragons5echaractersheet.PlayerCharacter;
-
-
 
 public class CreateCharacterActivity extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener {
@@ -26,6 +26,8 @@ public class CreateCharacterActivity extends AppCompatActivity implements
     private Spinner shield;
     private Spinner armor;
     private Spinner language;
+    private Spinner background;
+    private Spinner alignment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class CreateCharacterActivity extends AppCompatActivity implements
         /**********************************************************************************
          ***********************S P I N N E R   A S S I G N M E N T*************************
          ***********************************************************************************/
+
         race = findViewById(R.id.race);
         race.setOnItemSelectedListener(this);
         ArrayAdapter<CharSequence> raceAdapter = ArrayAdapter.createFromResource(this,
@@ -44,7 +47,7 @@ public class CreateCharacterActivity extends AppCompatActivity implements
 
         spell = findViewById(R.id.spells);
         spell.setOnItemSelectedListener(this);
-        final ArrayAdapter<CharSequence> spellAdapter = ArrayAdapter.createFromResource(this,
+        ArrayAdapter<CharSequence> spellAdapter = ArrayAdapter.createFromResource(this,
                 R.array.spells_arrays, android.R.layout.simple_spinner_item);
         spellAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spell.setAdapter(spellAdapter);
@@ -84,14 +87,14 @@ public class CreateCharacterActivity extends AppCompatActivity implements
         languageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         language.setAdapter(languageAdapter);
 
-        final Spinner alignment = findViewById(R.id.alignment);
+        alignment = findViewById(R.id.alignment);
         alignment.setOnItemSelectedListener(this);
         ArrayAdapter<CharSequence> alignmentAdapter = ArrayAdapter.createFromResource(this,
                 R.array.alignment_arrays, android.R.layout.simple_spinner_item);
         alignmentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         alignment.setAdapter(alignmentAdapter);
 
-        final Spinner background = findViewById(R.id.background);
+        background = findViewById(R.id.background);
         background.setOnItemSelectedListener(this);
         ArrayAdapter<CharSequence> backgroundAdapter = ArrayAdapter.createFromResource(this,
                 R.array.background_arrays, android.R.layout.simple_spinner_item);
@@ -101,12 +104,13 @@ public class CreateCharacterActivity extends AppCompatActivity implements
         SharedPreferences sharedPreference;
         Button saveButton;
 
+        //Might not need to be final.
         final EditText name, strength, dexterity, constitution, intelligence, wisdom, charisma;
 
-        final CheckBox athletics, acrobatics, sleightOfHand, stealth, arcana, history, investigation, nature,
+        CheckBox athletics, acrobatics, sleightOfHand, stealth, arcana, history, investigation, nature,
                 religion, animalHandling, insight, medicine, perception, survival, deception, intimidation,
                 performance, persuasion;
-        
+
         sharedPreference = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
         athletics = (CheckBox) findViewById(R.id.athletics);
         acrobatics = (CheckBox) findViewById(R.id.acrobatics);
@@ -199,7 +203,14 @@ public class CreateCharacterActivity extends AppCompatActivity implements
                 }else if(survival.isChecked()){
                     character.addPlayerSkill("Survival");
                 }
-
+                SharedPreferences.Editor prefsEditor = sharedPreference.edit();
+                Gson gson = new Gson();
+                String json = gson.toJson(character);
+                prefsEditor.putString(name.getText().toString(), json);
+                Set<String> names = sharedPreference.getStringSet("names", new HashSet<String>());
+                names.add(name.getText().toString());
+                prefsEditor.putString("names", names);
+                prefsEditor.apply();
             }
         });
 

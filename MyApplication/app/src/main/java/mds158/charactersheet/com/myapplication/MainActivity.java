@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> traitData=  new ArrayList<>((ArrayList<String>)database.raceFeatureDAO().loadFeatures());
         ArrayList<String> languageData=  new ArrayList<>((ArrayList<String>)database.languageDAO().loadLanguages());
         ArrayList<Integer> speedData=  new ArrayList<>((ArrayList<Integer>)database.raceDAO().loadSpeeds());
+        ArrayList<String> skillData= new ArrayList<>((ArrayList<String>)database.skillDAO().loadSkills());
 
         ArrayList<ArrayList<String>> startingLangs=  new ArrayList<>();
         int i =0;
@@ -68,8 +69,20 @@ public class MainActivity extends AppCompatActivity {
                 (ArrayList<Integer>)database.raceDAO().loadIntMods(), (ArrayList<Integer>)database.raceDAO().loadWisMods(),
                 (ArrayList<Integer>)database.raceDAO().loadChaMods()));
 
-        character = new PlayerCharacter(raceData, classData, backgroundData, /*skillData, */healthData,
-                featureData, traitData, languageData, startingLangs, speedData, modifierData/*, skillData*/);
+        ArrayList<ArrayList<Boolean>> classSkillData=  new ArrayList<>();
+        i=0;
+        while(i< raceData.size()){
+            classSkillData.add((ArrayList<Boolean>)Arrays.asList(Boolean.parseBoolean(database.classDAO().loadAcrobatics(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadAnimalHandling(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadArcana(raceData.get(i))),
+                    Boolean.parseBoolean(database.classDAO().loadAthletics(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadDeception(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadHistory(raceData.get(i))),
+                    Boolean.parseBoolean(database.classDAO().loadInsight(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadIntimidation(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadInvestigation(raceData.get(i))),
+                    Boolean.parseBoolean(database.classDAO().loadMedicine(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadNature(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadPerception(raceData.get(i))),
+                    Boolean.parseBoolean(database.classDAO().loadPerformance(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadPersuasion(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadReligion(raceData.get(i))),
+                    Boolean.parseBoolean(database.classDAO().loadSleightOfHand(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadStealth(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadSurvival(raceData.get(i)))));
+            i++;
+        }
+
+        character = new PlayerCharacter(raceData, classData, backgroundData, skillData, healthData,
+                featureData, traitData, languageData, startingLangs, speedData, modifierData, classSkillData);
     }
 
     //Will need to re-format this to allow for multiple button actions. Works for just one right now.

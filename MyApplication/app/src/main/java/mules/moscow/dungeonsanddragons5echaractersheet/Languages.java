@@ -14,7 +14,7 @@ public class Languages {
      * @param extras the number of extra languages the player is allowed to learn
      */
     public Languages(ArrayList<String> languageData, int extras){
-        languages = new ArrayList<String>(languageData);
+        languages = new ArrayList<>(languageData);
 
         this.extras = extras;
     }
@@ -28,7 +28,7 @@ public class Languages {
     }
 
     public void setKnownLanguages(ArrayList<ArrayList<String>> startingLangs, int playerClass){
-        knownLanguages = new ArrayList<String>(startingLangs.get(playerClass));
+        knownLanguages = new ArrayList<>(startingLangs.get(playerClass));
     }
 
     /**

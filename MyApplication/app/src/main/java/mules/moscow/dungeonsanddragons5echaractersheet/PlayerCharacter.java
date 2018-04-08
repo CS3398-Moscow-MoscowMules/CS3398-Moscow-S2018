@@ -41,11 +41,11 @@ public class PlayerCharacter {
      * @param startingLangs 
      */
     public PlayerCharacter(ArrayList<String> raceData, ArrayList<String> classData, ArrayList<String> backgroundData,
-                           /*ArrayList<String> skillData,*/  ArrayList<Integer> healthData,
+                           ArrayList<String> skillData,  ArrayList<Integer> healthData,
                            ArrayList<String> featuresData, ArrayList<String> traitData,
                            ArrayList<String> languageData, ArrayList<ArrayList<String>> startingLangs,
-                           ArrayList<Integer> classSpeedData, ArrayList<ArrayList<Integer>> modifierData
-                           /*ArrayList<ArrayList<Boolean>> classSkillsData*/){
+                           ArrayList<Integer> classSpeedData, ArrayList<ArrayList<Integer>> modifierData,
+                           ArrayList<ArrayList<Boolean>> classSkillsData){
 
         int extraLangs=0;
         for(int i =0; i<startingLangs.size(); i++){
@@ -62,8 +62,8 @@ public class PlayerCharacter {
         playerClass = new Classes(classData, healthData);
         playerBackground = new Backgrounds(backgroundData);
         playerAlignment = new Alignments();
-        //playerSkills = new Skills(skillData, classSkillsData);
-        hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();
+        playerSkills = new Skills(skillData, classSkillsData);
+
         playerFeatures = new Features(featuresData);                                //Does this need anything aditional to make it happen? (looks like no)
         playerTraits = new Traits(traitData);                                       //Does this need anything aditional to make it happen? (looks like no)
         playerLanguages = new Languages(languageData, extraLangs);
@@ -76,6 +76,12 @@ public class PlayerCharacter {
         intelligence = new AbilityScore(0, modifierData.get(3));
         wisdom = new AbilityScore(0, modifierData.get(4));
         charisma = new AbilityScore(0, modifierData.get(5));
+
+        hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();
+    }
+
+
+    public void updateModifiers(){
         //increase Half elf by 1 for two of choice
     }
 
@@ -166,6 +172,11 @@ public class PlayerCharacter {
     public ArrayList<Boolean> getPlayerSkills() {
         return playerSkills.getPlayerSkills();
     }
+
+
+    public void setSkillOptions(){ playerSkills.setSkillOptions(playerClass.getPlayerClass());}
+
+    public void addPlayerSkill(String skill){playerSkills.addPlayerSkill(skill);}
 
     /**
      * returns the player's alignment

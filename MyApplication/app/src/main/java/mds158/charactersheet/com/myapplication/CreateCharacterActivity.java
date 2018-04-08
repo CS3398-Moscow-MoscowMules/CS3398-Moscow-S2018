@@ -103,7 +103,7 @@ public class CreateCharacterActivity extends AppCompatActivity implements
 
         final EditText name, strength, dexterity, constitution, intelligence, wisdom, charisma;
 
-        CheckBox athletics, acrobatics, sleightOfHand, stealth, arcana, history, investigation, nature,
+        final CheckBox athletics, acrobatics, sleightOfHand, stealth, arcana, history, investigation, nature,
                 religion, animalHandling, insight, medicine, perception, survival, deception, intimidation,
                 performance, persuasion;
         
@@ -161,7 +161,45 @@ public class CreateCharacterActivity extends AppCompatActivity implements
                 character.setShield(shield.getSelectedItem().toString());
                 character.setSpell(spell.getSelectedItem().toString());
 
-                //Will set character skills here when PlayerCharacter is set up to hold them -Becca
+                character.setSkillOptions();
+                if(acrobatics.isChecked()){
+                    character.addPlayerSkill("Acrobatics");
+                }else if(animalHandling.isChecked()){
+                    character.addPlayerSkill("Animal Handling");
+                }else if(arcana.isChecked()){
+                    character.addPlayerSkill("Arcana");
+                }else if(athletics.isChecked()){
+                    character.addPlayerSkill("Athletics");
+                }else if(deception.isChecked()){
+                    character.addPlayerSkill("Deception");
+                }else if(history.isChecked()){
+                    character.addPlayerSkill("History");
+                }else if(insight.isChecked()){
+                    character.addPlayerSkill("Insight");
+                }else if(intimidation.isChecked()){
+                    character.addPlayerSkill("Intimidation");
+                }else if(investigation.isChecked()){
+                    character.addPlayerSkill("Investigation");
+                }else if(medicine.isChecked()){
+                    character.addPlayerSkill("Medicine");
+                }else if(nature.isChecked()){
+                    character.addPlayerSkill("Nature");
+                }else if(perception.isChecked()){
+                    character.addPlayerSkill("Perception");
+                }else if(performance.isChecked()){
+                    character.addPlayerSkill("Performance");
+                }else if(persuasion.isChecked()){
+                    character.addPlayerSkill("Persuasion");
+                }else if(religion.isChecked()){
+                    character.addPlayerSkill("Religion");
+                }else if(sleightOfHand.isChecked()){
+                    character.addPlayerSkill("Sleight of Hand");
+                }else if(stealth.isChecked()){
+                    character.addPlayerSkill("Stealth");
+                }else if(survival.isChecked()){
+                    character.addPlayerSkill("Survival");
+                }
+
             }
         });
 

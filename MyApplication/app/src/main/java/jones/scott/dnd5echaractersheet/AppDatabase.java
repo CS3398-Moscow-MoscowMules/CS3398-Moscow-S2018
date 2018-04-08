@@ -19,7 +19,8 @@ import java.util.concurrent.Executors;
         Class.class,
         ClassFeature.class,
         WeaponProficiency.class,
-        Background.class}, version = 1, exportSchema = false)
+        Background.class,
+        Skill.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase INSTANCE;
 
@@ -30,6 +31,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract ClassFeatureDAO classFeatureDAO();
     public abstract WeaponProficiencyDAO weaponProficiencyDAO();
     public abstract BackgroundDAO backgroundDAO();
+    public abstract SkillDAO skillDAO();
 
     public synchronized static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {

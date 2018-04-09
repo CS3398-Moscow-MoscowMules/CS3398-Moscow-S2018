@@ -19,6 +19,8 @@ import mules.moscow.dungeonsanddragons5echaractersheet.PlayerCharacter;
 public class CreateCharacterActivity extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener {
 
+    private SharedPreferences sharedPreference;
+
     private Spinner race;
     private Spinner spell;
     private Spinner classes;
@@ -28,6 +30,12 @@ public class CreateCharacterActivity extends AppCompatActivity implements
     private Spinner language;
     private Spinner background;
     private Spinner alignment;
+
+    private EditText name, strength, dexterity, constitution, intelligence, wisdom, charisma;
+
+    private CheckBox athletics, acrobatics, sleightOfHand, stealth, arcana, history, investigation, nature,
+                  religion, animalHandling, insight, medicine, perception, survival, deception, intimidation,
+                  performance, persuasion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,15 +109,8 @@ public class CreateCharacterActivity extends AppCompatActivity implements
         backgroundAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         background.setAdapter(backgroundAdapter);
 
-        SharedPreferences sharedPreference;
+
         Button saveButton;
-
-        //Might not need to be final.
-        final EditText name, strength, dexterity, constitution, intelligence, wisdom, charisma;
-
-        CheckBox athletics, acrobatics, sleightOfHand, stealth, arcana, history, investigation, nature,
-                religion, animalHandling, insight, medicine, perception, survival, deception, intimidation,
-                performance, persuasion;
 
         sharedPreference = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
         athletics = (CheckBox) findViewById(R.id.athletics);
@@ -209,7 +210,7 @@ public class CreateCharacterActivity extends AppCompatActivity implements
                 prefsEditor.putString(name.getText().toString(), json);
                 Set<String> names = sharedPreference.getStringSet("names", new HashSet<String>());
                 names.add(name.getText().toString());
-                prefsEditor.putString("names", names);
+                prefsEditor.putStringSet("names", names);
                 prefsEditor.apply();
             }
         });

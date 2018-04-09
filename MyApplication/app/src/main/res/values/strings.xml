@@ -5,6 +5,13 @@
     <string name="createButton">Create Character</string>
     <string name="viewButton">View Character Sheets</string>
 
+    <!--Strings and String arrays used in Create Character page-->
+
+    <string name="title_activity_view_character">ViewCharacterActivity</string>
+
+    <string name="GenAttr">Select General Attributes</string>
+
+    <string name="hintName">Name</string>
     <string-array name="race_arrays">
         <item>Select Race</item>
         <item>Aarakocra</item>
@@ -34,7 +41,6 @@
         <item>Triton</item>
         <item>Yuan-ti Pureblood</item>
     </string-array>
-
     <string-array name="class_arrays">
         <item>Select Class</item>
         <item>Barbarian</item>
@@ -51,7 +57,6 @@
         <item>Wizard</item>
         <item>Blood Hunter</item>
     </string-array>
-
     <string-array name="background_arrays">
         <item>Select Background</item>
         <item>Acolyte</item>
@@ -86,7 +91,6 @@
         <item>Uthgardt Tribe Member</item>
         <item>Waterdhavian Noble</item>
     </string-array>
-
     <string-array name="alignment_arrays">
         <item>Select Alignment</item>
         <item>Lawful Good</item>
@@ -99,7 +103,6 @@
         <item>Neutral Evil</item>
         <item>Chaotic Evil</item>
     </string-array>
-
     <string-array name="language_arrays">
         <item>Select Language</item>
         <item>Abyssal</item>
@@ -125,7 +128,6 @@
         <item>Terran</item>
         <item>Undercommon</item>
     </string-array>
-
     <string-array name="armor_arrays">
         <item>Select Armor</item>
         <item>Padded</item>
@@ -141,14 +143,12 @@
         <item>Splint</item>
         <item>Plate</item>
     </string-array>
-
     <string-array name="shield_arrays">
         <item>Select Shield</item>
         <item>None</item>
         <item>Wood</item>
         <item>Metal</item>
     </string-array>
-
     <string-array name="weapons_arrays">
         <item>Select Weapon</item>
         <item>Club</item>
@@ -188,7 +188,6 @@
         <item>Longbow</item>
         <item>Net</item>
     </string-array>
-
     <string-array name="spells_arrays">
         <item>Select Spell</item>
         <item>Acid Splash</item>
@@ -553,4 +552,47 @@
         <item>Wrathful Smite</item>
         <item>Zone of Truth</item>
     </string-array>
+
+    <string name="PhysAttr">Select Physical Attributes</string>
+    <string name="hintStrength">Strength</string>
+    <string name="hintDext">Dexterity</string>
+    <string name="hintConst">Constitution</string>
+    <string name="hintIntel">Intelligence</string>
+    <string name="hintWisdom">Wisdom</string>
+    <string name="hintCharisma">Charisma</string>
+
+    <string name="StrengthProf">Strength Proficiencies</string>
+    <string name="Athletics">Athletics</string>
+
+    <string name="DextProf">Dexterity Proficiencies</string>
+    <string name="Acro">Acrobatics</string>
+    <string name="SOH">Sleight of Hand</string>
+    <string name="Stealth">Stealth</string>
+
+    <string name="IntelProf">Intelligence Proficiencies</string>
+    <string name="Arcana">Arcana</string>
+    <string name="History">History</string>
+    <string name="Investig">Investigation</string>
+    <string name="Nature">Nature</string>
+    <string name="Religion">Religion</string>
+
+    <string name="WisdomProf">Wisdom Proficiencies</string>
+    <string name="AnimHand">Animal Handling</string>
+    <string name="Insight">Insight</string>
+    <string name="Meds">Medicine</string>
+    <string name="Percep">Perception</string>
+    <string name="Survival">Survival</string>
+
+    <string name="CharProf">Charisma Proficiencies</string>
+    <string name="Deception">Deception</string>
+    <string name="Intimid">Intimidation</string>
+    <string name="Performance">Performance</string>
+    <string name="Persuasion">Persuasion</string>
+    
+    <string name="save">Save</string>
+
+    <!--Strings and String arrays used in View Character page-->
+
+    <string name="hintSelChar">Select Character</string>
+
 </resources>

@@ -8,9 +8,10 @@
 
     <ScrollView
         android:id="@+id/scroller"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:fillViewport="true"
+        android:gravity="bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,510 +23,503 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="12dp"
-                android:text="Select General Attributes" />
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:stretchColumns="1">
 
-            <Spinner
-                android:id="@+id/race"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/classification"
-                android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/classification"
-                android:layout_marginTop="28dp"
-                android:entries="@array/race_arrays"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/GenAttr" />
 
-            <Spinner
-                android:id="@+id/background"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/alignment"
-                android:layout_alignStart="@+id/alignment"
-                android:layout_below="@+id/alignment"
-                android:layout_marginTop="13dp"
-                android:entries="@array/background_arrays"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/classification" />
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-            <Spinner
-                android:id="@+id/alignment"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/Language"
-                android:layout_alignStart="@+id/Language"
-                android:layout_below="@+id/Language"
-                android:layout_marginTop="15dp"
-                android:entries="@array/alignment_arrays"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/background" />
+                <Spinner
+                    android:id="@+id/race"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:entries="@array/race_arrays"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/name" />
 
-            <Spinner
-                android:id="@+id/Language"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/armor_spinner"
-                android:layout_alignStart="@+id/armor_spinner"
-                android:layout_below="@+id/armor_spinner"
-                android:layout_marginTop="13dp"
-                android:entries="@array/language_arrays"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/alignment" />
+                <Spinner
+                    android:id="@+id/spells"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:entries="@array/spells_arrays"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/race" />
 
-            <Spinner
-                android:id="@+id/armor_spinner"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/shield_spinner"
-                android:layout_alignStart="@+id/shield_spinner"
-                android:layout_below="@+id/shield_spinner"
-                android:layout_marginTop="14dp"
-                android:entries="@array/armor_arrays"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Language" />
+                <Spinner
+                    android:id="@+id/classification"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:entries="@array/class_arrays"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spells" />
 
-            <Spinner
-                android:id="@+id/shield_spinner"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/weapons_spinner"
-                android:layout_alignStart="@+id/weapons_spinner"
-                android:layout_below="@+id/weapons_spinner"
-                android:layout_marginTop="15dp"
-                android:entries="@array/shield_arrays"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/armor_spinner" />
+                <Spinner
+                    android:id="@+id/weapons_spinner"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:entries="@array/weapons_arrays"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/classification" />
 
-            <Spinner
-                android:id="@+id/weapons_spinner"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/classification"
-                android:layout_alignStart="@+id/classification"
-                android:layout_below="@+id/classification"
-                android:layout_marginTop="17dp"
-                android:entries="@array/weapons_arrays"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shield_spinner" />
+                <Spinner
+                    android:id="@+id/shield_spinner"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:entries="@array/shield_arrays"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weapons_spinner" />
 
-            <Spinner
-                android:id="@+id/spells"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/race"
-                android:layout_alignStart="@+id/race"
-                android:layout_below="@+id/race"
-                android:layout_marginTop="16dp"
-                android:entries="@array/spells_arrays"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/weapons_spinner" />
+                <Spinner
+                    android:id="@+id/armor_spinner"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:entries="@array/armor_arrays"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shield_spinner" />
 
-            <Spinner
-                android:id="@+id/classification"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/spells"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
-                android:entries="@array/class_arrays"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/race" />
+                <Spinner
+                    android:id="@+id/Language"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:entries="@array/language_arrays"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/armor_spinner" />
 
-            <!--****************************************************************************-->
-            <!--*************************END OF SPINNERS************************************-->
-            <!--****************************************************************************-->
+                <Spinner
+                    android:id="@+id/alignment"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:entries="@array/alignment_arrays"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Language" />
 
-            <TextView
-                android:id="@+id/textAttributes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/background"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="Select Physical Attributes" />
+                <Spinner
+                    android:id="@+id/background"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:entries="@array/background_arrays"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/alignment" />
 
-            <EditText
-                android:id="@+id/strength"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/background"
-                android:layout_alignStart="@+id/background"
-                android:layout_below="@+id/textAttributes"
-                android:hint="Strength"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/background" />
+                <!--****************************************************************************-->
+                <!--*************************END OF SPINNERS************************************-->
+                <!--****************************************************************************-->
 
-            <EditText
-                android:id="@+id/dexterity"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/strength"
-                android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/strength"
-                android:layout_marginBottom="29dp"
-                android:hint="Dexterity"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/strength" />
+                <TextView
+                    android:id="@+id/textAttributes"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="@string/PhysAttr" />
 
+                <EditText
+                    android:id="@+id/strength"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/hintStrength"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/background" />
 
-            <!-- CURRENTLY PATCHING
-            <EditText
-                android:id="@+id/constitution"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:hint="Constitution"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/dexterity" />
+                <EditText
+                    android:id="@+id/dexterity"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/hintDext"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/strength" />
 
-            <EditText
-                android:id="@+id/intelligence"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:hint="Intelligence"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constitution" />
+                <EditText
+                    android:id="@+id/constitution"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/hintConst"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dexterity" />
 
-            <EditText
-                android:id="@+id/wisdom"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:hint="Wisdom"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/intelligence" />
+                <EditText
+                    android:id="@+id/intelligence"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/hintIntel"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constitution" />
 
-            <EditText
-                android:id="@+id/charisma"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:hint="Charisma"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wisdom" />
+                <EditText
+                    android:id="@+id/wisdom"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/hintWisdom"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/intelligence" />
 
-            <TextView
-                android:id="@+id/strengthProf"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="Strength Proficiencies"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/charisma" />
+                <EditText
+                    android:id="@+id/charisma"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/hintCharisma"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wisdom" />
 
-            <CheckBox
-                android:id="@+id/athletics"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Athletics"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/strengthProf" />
+                <TextView
+                    android:id="@+id/strengthProf"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/StrengthProf"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/charisma" />
 
-            <TextView
-                android:id="@+id/dexterityProf"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="Dexterity Proficiencies"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/athletics" />
+                <CheckBox
+                    android:id="@+id/athletics"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Athletics"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/strengthProf" />
 
-            <CheckBox
-                android:id="@+id/acrobatics"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Acrobatics"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/dexterityProf" />
+                <TextView
+                    android:id="@+id/dexterityProf"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/DextProf"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/athletics" />
 
-            <CheckBox
-                android:id="@+id/sleightOfHand"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Sleight of Hand"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/acrobatics" />
+                <CheckBox
+                    android:id="@+id/acrobatics"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Acro"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dexterityProf" />
 
-            <CheckBox
-                android:id="@+id/stealth"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Stealth"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sleightOfHand" />
+                <CheckBox
+                    android:id="@+id/sleightOfHand"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/SOH"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/acrobatics" />
 
-            <TextView
-                android:id="@+id/intelligenceProf"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="Intelligence Proficiencies"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/stealth" />
+                <CheckBox
+                    android:id="@+id/stealth"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Stealth"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sleightOfHand" />
 
-            <CheckBox
-                android:id="@+id/arcana"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Arcana"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/intelligenceProf" />
+                <TextView
+                    android:id="@+id/intelligenceProf"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/IntelProf"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/stealth" />
 
-            <CheckBox
-                android:id="@+id/history"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="History"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/arcana" />
+                <CheckBox
+                    android:id="@+id/arcana"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Arcana"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/intelligenceProf" />
 
-            <CheckBox
-                android:id="@+id/investigation"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Investigation"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/history" />
+                <CheckBox
+                    android:id="@+id/history"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/History"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/arcana" />
 
-            <CheckBox
-                android:id="@+id/nature"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Nature"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/investigation" />
+                <CheckBox
+                    android:id="@+id/investigation"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Investig"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/history" />
 
-            <CheckBox
-                android:id="@+id/religion"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Religion"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nature" />
+                <CheckBox
+                    android:id="@+id/nature"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Nature"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/investigation" />
 
-            <TextView
-                android:id="@+id/wisdomProf"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="Wisdom Proficiencies"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/religion" />
+                <CheckBox
+                    android:id="@+id/religion"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Religion"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nature" />
 
-            <CheckBox
-                android:id="@+id/animalHandling"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Animal Handling"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wisdomProf" />
+                <TextView
+                    android:id="@+id/wisdomProf"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/WisdomProf"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/religion" />
 
-            <CheckBox
-                android:id="@+id/insight"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Insight"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/animalHandling" />
+                <CheckBox
+                    android:id="@+id/animalHandling"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/AnimHand"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wisdomProf" />
 
-            <CheckBox
-                android:id="@+id/medicine"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Medicine"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/insight" />
+                <CheckBox
+                    android:id="@+id/insight"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Insight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/animalHandling" />
 
-            <CheckBox
-                android:id="@+id/perception"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Perception"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/medicine" />
+                <CheckBox
+                    android:id="@+id/medicine"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Meds"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/insight" />
 
-            <CheckBox
-                android:id="@+id/survival"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Survival"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/perception" />
+                <CheckBox
+                    android:id="@+id/perception"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Percep"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/medicine" />
 
-            <TextView
-                android:id="@+id/charismaProf"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="Charisma Proficiencies"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/survival" />
+                <CheckBox
+                    android:id="@+id/survival"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Survival"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/perception" />
 
-            <CheckBox
-                android:id="@+id/deception"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Deception"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/charismaProf" />
+                <TextView
+                    android:id="@+id/charismaProf"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/CharProf"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/survival" />
 
-            <CheckBox
-                android:id="@+id/intimidation"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Intimidation"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/deception" />
+                <CheckBox
+                    android:id="@+id/deception"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Deception"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/charismaProf" />
 
-            <CheckBox
-                android:id="@+id/performance"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Performance"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/intimidation" />
+                <CheckBox
+                    android:id="@+id/intimidation"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Intimid"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/deception" />
 
-            <CheckBox
-                android:id="@+id/persuasion"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Persuasion"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/performance" />
+                <CheckBox
+                    android:id="@+id/performance"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Performance"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/intimidation" />
 
-        -->
+                <CheckBox
+                    android:id="@+id/persuasion"
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Persuasion"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/performance" />
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/save"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </TableLayout>
 
         </RelativeLayout>
 

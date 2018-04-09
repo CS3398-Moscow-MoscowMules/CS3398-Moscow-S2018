@@ -4,8 +4,8 @@ import java.util.ArrayList;
 public class AbilityScore {
 	private int score;
 	private int modifier;
-	private ArrayList<Integer> RaceModifiers = new ArrayList<Integer>();
-	private ArrayList<Integer> ClassModifiers = new ArrayList<Integer>();
+	private ArrayList<Integer> RaceModifiers = new ArrayList<>();
+	private ArrayList<Integer> ClassModifiers = new ArrayList<>();
 	
         /**
          * AbilityScore constructor. Adds all race modifiers to the ability score.

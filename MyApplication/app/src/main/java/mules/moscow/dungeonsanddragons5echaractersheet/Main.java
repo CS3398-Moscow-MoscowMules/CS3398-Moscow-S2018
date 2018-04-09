@@ -22,7 +22,7 @@ public class Main {
     ArrayList<String> languageData=  new ArrayList<>((ArrayList<String>)database.languageDAO().loadLanguages());
 
     ArrayList<Integer> speedData=  new ArrayList<>((ArrayList<Integer>)database.raceDAO().loadSpeeds());
-    ArrayList<String> alignmentList = alignments.getAlignmentList();
+    //ArrayList<String> alignmentList = alignments.getAlignmentList();
     /*
     ArrayList<ArrayList<String>> startingLangs=  new ArrayList<>();
     int i =0;
@@ -31,10 +31,10 @@ public class Main {
         i++;
     }
 
-    ArrayList<ArrayList<String>> skillData=  new ArrayList<>();
+    ArrayList<ArrayList<Boolean>> ClassSkillData=  new ArrayList<>();
     i=0;
     while(i< raceData.size()){
-        skillData.add(Arrays.asList(database.skillDAO().loadAcrobatics(raceData.get(i)), database.skillDAO().loadAnimalHandling(raceData.get(i)), database.skillDAO().loadArcana(raceData.get(i)),
+        ClassSkillData.add(Arrays.asList(Boolean.parseBoolean(database.skillDAO().loadAcrobatics(raceData.get(i))), database.skillDAO().loadAnimalHandling(raceData.get(i)), database.skillDAO().loadArcana(raceData.get(i)),
             database.skillDAO().loadAthletics(raceData.get(i)), database.skillDAO().loadDeception(raceData.get(i)), database.skillDAO().loadHistory(raceData.get(i)),
             database.skillDAO().loadInsight(raceData.get(i)), database.skillDAO().loadIntimidation(raceData.get(i)), database.skillDAO().loadInvestigation(raceData.get(i)),
             database.skillDAO().loadMedicine(raceData.get(i)), database.skillDAO().loadNature(raceData.get(i)), database.skillDAO().loadPerception(raceData.get(i)),
@@ -48,12 +48,17 @@ public class Main {
             (ArrayList<Integer>)database.raceDAO().loadIntMods(), (ArrayList<Integer>)database.raceDAO().loadWisMods(),
             (ArrayList<Integer>)database.raceDAO().loadChaMods()));
 
-    DatabaseToGui dbToGui = new DatabaseToGui(raceData, classData, backgroundData, alignmentList, languageData);
+    //DatabaseToGui dbToGui = new DatabaseToGui(raceData, classData, backgroundData, alignmentList, languageData);
 
+<<<<<<< HEAD
     //We will want to do this from the GUI, not here. Will delete later.
     //private PlayerCharacter character = new PlayerCharacter(raceData, classData, /*backgroundData, skillData, */healthData,
     //        featureData, traitData, languageData, /*startingLangs, */speedData, modifierData/*, skillData*/);
 
+=======
+   // private PlayerCharacter character = new PlayerCharacter(raceData, classData, /*backgroundData, skillData, */healthData,
+   //         featureData, traitData, languageData, /*startingLangs, */speedData, modifierData/*, ClassSkillData*/);
+>>>>>>> 309f2939a5cd03d0b6b218c28193eb10699f7952
 
 
 }

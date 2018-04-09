@@ -25,60 +25,60 @@ public class Class {
     private int health;
 
     @ColumnInfo(name = "acrobatics")
-    private Boolean acrobatics;
+    private String acrobatics;
 
     @ColumnInfo(name = "animalHandling")
-    private Boolean animalHandling;
+    private String animalHandling;
 
     @ColumnInfo(name = "arcana")
-    private Boolean arcana;
+    private String arcana;
 
     @ColumnInfo(name = "athletics")
-    private Boolean athletics;
+    private String athletics;
 
     @ColumnInfo(name = "deception")
-    private Boolean deception;
+    private String deception;
 
     @ColumnInfo(name = "history")
-    private Boolean history;
+    private String history;
 
     @ColumnInfo(name = "insight")
-    private Boolean insight;
+    private String insight;
 
     @ColumnInfo(name = "intimidation")
-    private Boolean intimidation;
+    private String intimidation;
 
     @ColumnInfo(name = "investigation")
-    private Boolean investigation;
+    private String investigation;
 
     @ColumnInfo(name = "medicine")
-    private Boolean medicine;
+    private String medicine;
 
     @ColumnInfo(name = "nature")
-    private Boolean nature;
+    private String nature;
 
     @ColumnInfo(name = "perception")
-    private Boolean perception;
+    private String perception;
 
     @ColumnInfo(name = "performance")
-    private Boolean performance;
+    private String performance;
 
     @ColumnInfo(name = "persuasion")
-    private Boolean persuasion;
+    private String persuasion;
 
     @ColumnInfo(name = "religion")
-    private Boolean religion;
+    private String religion;
 
     @ColumnInfo(name = "sleightOfHand")
-    private Boolean sleightOfHand;
+    private String sleightOfHand;
 
     @ColumnInfo(name = "stealth")
-    private Boolean stealth;
+    private String stealth;
 
     @ColumnInfo(name = "survival")
-    private Boolean survival;
+    private String survival;
 
-    public Class(int cid, String className, int health, Boolean acrobatics, Boolean animalHandling, Boolean arcana, Boolean athletics, Boolean deception, Boolean history, Boolean insight, Boolean intimidation, Boolean investigation, Boolean medicine, Boolean nature, Boolean perception, Boolean performance, Boolean persuasion, Boolean religion, Boolean sleightOfHand, Boolean stealth, Boolean survival) {
+    public Class(int cid, String className, int health, String acrobatics, String animalHandling, String arcana, String athletics, String deception, String history, String insight, String intimidation, String investigation, String medicine, String nature, String perception, String performance, String persuasion, String religion, String sleightOfHand, String stealth, String survival) {
         this.cid = cid;
         this.className = className;
         this.health = health;
@@ -126,164 +126,164 @@ public class Class {
         this.health = health;
     }
 
-    public Boolean getAcrobatics() {
+    public String getAcrobatics() {
         return acrobatics;
     }
 
-    public void setAcrobatics(Boolean acrobatics) {
+    public void setAcrobatics(String acrobatics) {
         this.acrobatics = acrobatics;
     }
 
-    public Boolean getAnimalHandling() {
+    public String getAnimalHandling() {
         return animalHandling;
     }
 
-    public void setAnimalHandling(Boolean animalHandling) {
+    public void setAnimalHandling(String animalHandling) {
         this.animalHandling = animalHandling;
     }
 
-    public Boolean getArcana() {
+    public String getArcana() {
         return arcana;
     }
 
-    public void setArcana(Boolean arcana) {
+    public void setArcana(String arcana) {
         this.arcana = arcana;
     }
 
-    public Boolean getAthletics() {
+    public String getAthletics() {
         return athletics;
     }
 
-    public void setAthletics(Boolean athletics) {
+    public void setAthletics(String athletics) {
         this.athletics = athletics;
     }
 
-    public Boolean getDeception() {
+    public String getDeception() {
         return deception;
     }
 
-    public void setDeception(Boolean deception) {
+    public void setDeception(String deception) {
         this.deception = deception;
     }
 
-    public Boolean getHistory() {
+    public String getHistory() {
         return history;
     }
 
-    public void setHistory(Boolean history) {
+    public void setHistory(String history) {
         this.history = history;
     }
 
-    public Boolean getInsight() {
+    public String getInsight() {
         return insight;
     }
 
-    public void setInsight(Boolean insight) {
+    public void setInsight(String insight) {
         this.insight = insight;
     }
 
-    public Boolean getIntimidation() {
+    public String getIntimidation() {
         return intimidation;
     }
 
-    public void setIntimidation(Boolean intimidation) {
+    public void setIntimidation(String intimidation) {
         this.intimidation = intimidation;
     }
 
-    public Boolean getInvestigation() {
+    public String getInvestigation() {
         return investigation;
     }
 
-    public void setInvestigation(Boolean investigation) {
+    public void setInvestigation(String investigation) {
         this.investigation = investigation;
     }
 
-    public Boolean getMedicine() {
+    public String getMedicine() {
         return medicine;
     }
 
-    public void setMedicine(Boolean medicine) {
+    public void setMedicine(String medicine) {
         this.medicine = medicine;
     }
 
-    public Boolean getNature() {
+    public String getNature() {
         return nature;
     }
 
-    public void setNature(Boolean nature) {
+    public void setNature(String nature) {
         this.nature = nature;
     }
 
-    public Boolean getPerception() {
+    public String getPerception() {
         return perception;
     }
 
-    public void setPerception(Boolean perception) {
+    public void setPerception(String perception) {
         this.perception = perception;
     }
 
-    public Boolean getPerformance() {
+    public String getPerformance() {
         return performance;
     }
 
-    public void setPerformance(Boolean performance) {
+    public void setPerformance(String performance) {
         this.performance = performance;
     }
 
-    public Boolean getPersuasion() {
+    public String getPersuasion() {
         return persuasion;
     }
 
-    public void setPersuasion(Boolean persuasion) {
+    public void setPersuasion(String persuasion) {
         this.persuasion = persuasion;
     }
 
-    public Boolean getReligion() {
+    public String getReligion() {
         return religion;
     }
 
-    public void setReligion(Boolean religion) {
+    public void setReligion(String religion) {
         this.religion = religion;
     }
 
-    public Boolean getSleightOfHand() {
+    public String getSleightOfHand() {
         return sleightOfHand;
     }
 
-    public void setSleightOfHand(Boolean sleightOfHand) {
+    public void setSleightOfHand(String sleightOfHand) {
         this.sleightOfHand = sleightOfHand;
     }
 
-    public Boolean getStealth() {
+    public String getStealth() {
         return stealth;
     }
 
-    public void setStealth(Boolean stealth) {
+    public void setStealth(String stealth) {
         this.stealth = stealth;
     }
 
-    public Boolean getSurvival() {
+    public String getSurvival() {
         return survival;
     }
 
-    public void setSurvival(Boolean survival) {
+    public void setSurvival(String survival) {
         this.survival = survival;
     }
 
     public static Class[] populatedData() {
         return new Class[] {
-                new Class(1, "Barbarian", 12, false, true, false, true, false, false, false, true, false, false, true, true, false, false, false, false, false, true),
-                new Class(2, "Bard", 8, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true),
-                new Class(3, "Cleric", 8, false, false, false, false, false, true, true, false, false, true, false, false, false, true, true, false, false, false),
-                new Class(4, "Druid", 8, true, true, false, true, false, true, true, true, false, false, false, true, false, false, false, false, false, true),
-                new Class(5, "Fighter", 10, true, true, false, true, false, true, true, true, false, false, false, true, false, false, false, false, false, true),
-                new Class(6, "Monk", 8, true, false, false, true, false, true, true, false, false, false, false, false, false, false, true, false, true, false),
-                new Class(7, "Paladin", 10, false, false, false, true, false, false, true, true, false, true, false, false, false, true, true, false, false, false),
-                new Class(8, "Ranger", 10, false, true, false, true, false, false, true, false, true, false, true, true, false, false, false, false, true, true),
-                new Class(9, "Rogue", 8, true, false, false, true, true, false, true, true, true, false, false, true, true, true, false, true, true, false),
-                new Class(10, "Sorcerer", 6, false, false, true, false, true, false, true, true, false, false, false, false, false, true, true, false, false, false),
-                new Class(11, "Warlock", 8, false, false, true, false, true, true, false, true, true, false, true, false, false, false, true, false, false, false),
-                new Class(12, "Wizard", 6, false, false, true, false, false, true, true, false, true, true, false, false, false, false, true, false, false, false)
+                new Class(1, "Barbarian", 12, "false", "true", "false", "true", "false", "false", "false", "true", "false", "false", "true", "true", "false", "false", "false", "false", "false", "true"),
+                new Class(2, "Bard", 8, "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true"),
+                new Class(3, "Cleric", 8, "false", "false", "false", "false", "false", "true", "true", "false", "false", "true", "false", "false", "false", "true", "true", "false", "false", "false"),
+                new Class(4, "Druid", 8, "true", "true", "false", "true", "false", "true", "true", "true", "false", "false", "false", "true", "false", "false", "false", "false", "false", "true"),
+                new Class(5, "Fighter", 10, "true", "true", "false", "true", "false", "true", "true", "true", "false", "false", "false", "true", "false", "false", "false", "false", "false", "true"),
+                new Class(6, "Monk", 8, "true", "false", "false", "true", "false", "true", "true", "false", "false", "false", "false", "false", "false", "false", "true", "false", "true", "false"),
+                new Class(7, "Paladin", 10, "false", "false", "false", "true", "false", "false", "true", "true", "false", "true", "false", "false", "false", "true", "true", "false", "false", "false"),
+                new Class(8, "Ranger", 10, "false", "true", "false", "true", "false", "false", "true", "false", "true", "false", "true", "true", "false", "false", "false", "false", "true", "true"),
+                new Class(9, "Rogue", 8, "true", "false", "false", "true", "true", "false", "true", "true", "true", "false", "false", "true", "true", "true", "false", "true", "true", "false"),
+                new Class(10, "Sorcerer", 6, "false", "false", "true", "false", "true", "false", "true", "true", "false", "false", "false", "false", "false", "true", "true", "false", "false", "false"),
+                new Class(11, "Warlock", 8, "false", "false", "true", "false", "true", "true", "false", "true", "true", "false", "true", "false", "false", "false", "true", "false", "false", "false"),
+                new Class(12, "Wizard", 6, "false", "false", "true", "false", "false", "true", "true", "false", "true", "true", "false", "false", "false", "false", "true", "false", "false", "false")
         };
 
     }

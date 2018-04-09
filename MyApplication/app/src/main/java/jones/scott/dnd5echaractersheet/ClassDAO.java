@@ -23,56 +23,56 @@ public interface ClassDAO {
     public List<Integer> loadHealths();
 
     @Query("SELECT acrobatics FROM classes WHERE class = :className")
-    public int loadAcrobatics(String className);
+    public String loadAcrobatics(String className);
 
     @Query("SELECT animalHandling FROM classes WHERE class = :className")
-    public int loadAnimalHandling(String className);
+    public String loadAnimalHandling(String className);
 
     @Query("SELECT arcana FROM classes WHERE class = :className")
-    public int loadArcana(String className);
+    public String loadArcana(String className);
 
     @Query("SELECT athletics FROM classes WHERE class = :className")
-    public int loadAthletics(String className);
+    public String loadAthletics(String className);
 
     @Query("SELECT deception FROM classes WHERE class = :className")
-    public int loadDeception(String className);
+    public String loadDeception(String className);
 
     @Query("SELECT history FROM classes WHERE class = :className")
-    public int loadHistory(String className);
+    public String loadHistory(String className);
 
     @Query("SELECT insight FROM classes WHERE class = :className")
-    public int loadInsight(String className);
+    public String loadInsight(String className);
 
     @Query("SELECT intimidation FROM classes WHERE class = :className")
-    public int loadIntimidation(String className);
+    public String loadIntimidation(String className);
 
     @Query("SELECT investigation FROM classes WHERE class = :className")
-    public int loadInvestigation(String className);
+    public String loadInvestigation(String className);
 
     @Query("SELECT medicine FROM classes WHERE class = :className")
-    public int loadMedicine(String className);
+    public String loadMedicine(String className);
 
     @Query("SELECT nature FROM classes WHERE class = :className")
-    public int loadNature(String className);
+    public String loadNature(String className);
 
     @Query("SELECT perception FROM classes WHERE class = :className")
-    public int loadPerception(String className);
+    public String loadPerception(String className);
 
     @Query("SELECT performance FROM classes WHERE class = :className")
-    public int loadPerformance(String className);
+    public String loadPerformance(String className);
 
     @Query("SELECT persuasion FROM classes WHERE class = :className")
-    public int loadPersuasion(String className);
+    public String loadPersuasion(String className);
 
     @Query("SELECT religion FROM classes WHERE class = :className")
-    public int loadReligion(String className);
+    public String loadReligion(String className);
 
     @Query("SELECT sleightOfHand FROM classes WHERE class = :className")
-    public int loadSleightOfHand(String className);
+    public String loadSleightOfHand(String className);
 
     @Query("SELECT stealth FROM classes WHERE class = :className")
-    public int loadStealth(String className);
+    public String loadStealth(String className);
 
     @Query("SELECT survival FROM classes WHERE class = :className")
-    public int loadSurvival(String className);
+    public String loadSurvival(String className);
 }

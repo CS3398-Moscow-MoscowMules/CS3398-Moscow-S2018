@@ -11,12 +11,10 @@ public class Languages {
     /**
      * The constructor for language.
      * @param languageData contains all available languages
-     * @param startingLangs contains all available starting languages
      * @param extras the number of extra languages the player is allowed to learn
      */
-    public Languages(ArrayList<String> languageData, ArrayList<String> startingLangs, int extras){
-        languages = new ArrayList<String>(languageData);
-        knownLanguages = new ArrayList<String>(startingLangs);
+    public Languages(ArrayList<String> languageData, int extras){
+        languages = new ArrayList<>(languageData);
 
         this.extras = extras;
     }
@@ -27,6 +25,10 @@ public class Languages {
      */
     public ArrayList<String> getLanguageList() {
         return knownLanguages;
+    }
+
+    public void setKnownLanguages(ArrayList<ArrayList<String>> startingLangs, int playerClass){
+        knownLanguages = new ArrayList<>(startingLangs.get(playerClass));
     }
 
     /**

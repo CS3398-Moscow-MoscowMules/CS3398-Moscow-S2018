@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PlayerCharacter {
+    private String characterName;
     private Races playerRace;
     private Classes playerClass;
     private Backgrounds playerBackground;
@@ -22,6 +23,14 @@ public class PlayerCharacter {
     private AbilityScore wisdom;
     private AbilityScore charisma;
 
+    //placeholders for not yet implemented features
+    private String weapon;
+    private String armor;
+    private String shield;
+    private String spell;
+
+    private ArrayList<ArrayList<String>> startingLangs;
+
     /**
      * Player character constructor. Initializes the all the player's fields.
      * @param raceData
@@ -31,13 +40,13 @@ public class PlayerCharacter {
      * @param languageData
      * @param startingLangs 
      */
-    public PlayerCharacter(ArrayList<String> raceData, ArrayList<String> classData, /*ArrayList<String> backgroundData,*/
-                           /*ArrayList<String> skillData,*/  ArrayList<Integer> healthData,
+    public PlayerCharacter(ArrayList<String> raceData, ArrayList<String> classData, ArrayList<String> backgroundData,
+                           ArrayList<String> skillData,  ArrayList<Integer> healthData,
                            ArrayList<String> featuresData, ArrayList<String> traitData,
-                           ArrayList<String> languageData, /*ArrayList<ArrayList<String>> startingLangs,*/
-                           ArrayList<Integer> classSpeedData, ArrayList<ArrayList<Integer>> modifierData
-                           /*ArrayList<ArrayList<Boolean>> classSkillsData*/){
-/*
+                           ArrayList<String> languageData, ArrayList<ArrayList<String>> startingLangs,
+                           ArrayList<Integer> classSpeedData, ArrayList<ArrayList<Integer>> modifierData,
+                           ArrayList<ArrayList<Boolean>> classSkillsData){
+
         int extraLangs=0;
         for(int i =0; i<startingLangs.size(); i++){
             if(startingLangs.get(i).equals("None"))
@@ -47,18 +56,28 @@ public class PlayerCharacter {
                 startingLangs.remove(i);
             }
         }
-*/
+
 
         playerRace = new Races(raceData);
         playerClass = new Classes(classData, healthData);
-        //playerBackground = new Backgrounds(backgroundData);
+        playerBackground = new Backgrounds(backgroundData);
         playerAlignment = new Alignments();
+<<<<<<< HEAD
         //playerSkills = new Skills(skillData, classSkillsData);
         hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();
         playerFeatures = new Features(featuresData);                                //Does this need anything aditional to make it happen? (looks like no?)
         playerTraits = new Traits(traitData);                                       //Does this need anything aditional to make it happen? (looks like no?)
         //playerLanguages = new Languages(languageData, startingLangs, extraLangs);
               
+=======
+        playerSkills = new Skills(skillData, classSkillsData);
+
+        playerFeatures = new Features(featuresData);                                //Does this need anything aditional to make it happen? (looks like no)
+        playerTraits = new Traits(traitData);                                       //Does this need anything aditional to make it happen? (looks like no)
+        playerLanguages = new Languages(languageData, extraLangs);
+        this.startingLangs = startingLangs;
+        playerSpeed = new Speed(classSpeedData, playerClass.getPlayerClass());      //Does this need anything aditional to make it happen? (looks like no)
+>>>>>>> 309f2939a5cd03d0b6b218c28193eb10699f7952
 
         strength = new AbilityScore(0, modifierData.get(0));
         dexterity = new AbilityScore(0, modifierData.get(1));
@@ -66,34 +85,78 @@ public class PlayerCharacter {
         intelligence = new AbilityScore(0, modifierData.get(3));
         wisdom = new AbilityScore(0, modifierData.get(4));
         charisma = new AbilityScore(0, modifierData.get(5));
+
+        hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();
+    }
+
+
+    public void updateModifiers(){
         //increase Half elf by 1 for two of choice
     }
 
     // Things that don't depend on other things when being set
     /**
-     * allows the playerRace to be set individually from PlayerCharacter
-     * @param playerRace the player's chosen race
+     * returns the character's name
+     * @return the character's name
      */
-    public void setPlayerRace( String playerRace ) {
-        playerRace.setPlayerRace( playerRace );
+    public String getCharacterName() {
+        return characterName;
+    }
+
+    /**
+     * allows the character's name to be set individually from PlayerCharacter
+     * @param characterName the player's chosen name
+     */
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
+    }
+
+    /**
+     * allows the playerRace to be set individually from PlayerCharacter
+     * @param givenRace the player's chosen race
+     */
+    public void setPlayerRace( String givenRace ) {
+        playerRace.setPlayerRace( givenRace );
     }
     
     /**
      * allows the playerClass to be set individually from PlayerCharacter
-     * @param playerClass the player's chosen class
+     * @param givenClass the player's chosen class
      */
+<<<<<<< HEAD
     public void setPlayerClass( String playerClass ) {
         playerClass.setPlayerClass( playerClass );
         setPlayerSpeed( playerClass );
+=======
+    public void setPlayerClass( String givenClass ) {
+        playerClass.setPlayerClass( givenClass );
+>>>>>>> 309f2939a5cd03d0b6b218c28193eb10699f7952
     }
     
     /**
      * allows the playerAlignment to be set individually from PlayerCharacter
-     * @param playerAlignment the player's chosen alignment
+     * @param givenAlignment the player's chosen alignment
      */
-    public void setPlayerAlignment( String playerAlignment ) {
-        playerAlignment.setPlayerAlignment( playerAlignment );
+    public void setPlayerAlignment( String givenAlignment ) {
+        playerAlignment.setPlayerAlignment( givenAlignment );
     }
+
+    /**
+     * allows the playerBackground to be set individually from PlayerCharacter
+     * @param givenBackground the player's chosen background
+     */
+    public void setPlayerBackground(String givenBackground){
+        playerBackground.setPlayerBackground(givenBackground);
+    }
+
+    /**
+     * updates known languages based on players class
+     * can only be used after class has been set
+     */
+    public void setKnownLanguages(){
+        playerLanguages.setKnownLanguages(startingLangs, playerClass.getPlayerClass());
+    }
+<<<<<<< HEAD
     
     //background (make later)
     
@@ -107,6 +170,8 @@ public class PlayerCharacter {
         playerSpeed = new Speed(classSpeedData, p.getPlayerClass());
     }
     
+=======
+>>>>>>> 309f2939a5cd03d0b6b218c28193eb10699f7952
 
     /**
      * returns the player's race
@@ -139,6 +204,11 @@ public class PlayerCharacter {
     public ArrayList<Boolean> getPlayerSkills() {
         return playerSkills.getPlayerSkills();
     }
+
+
+    public void setSkillOptions(){ playerSkills.setSkillOptions(playerClass.getPlayerClass());}
+
+    public void addPlayerSkill(String skill){playerSkills.addPlayerSkill(skill);}
 
     /**
      * returns the player's alignment
@@ -175,10 +245,8 @@ public class PlayerCharacter {
     /**
      * Adds a language to the list of languages spoken by the player
      * @param newLang the language that has been learned
-     * @param classExtra adds starting languages based on the player's class
-     * @param bgExtra number of extra languages the player is allowed to learn
      */
-    public void addLanguage(String newLang, boolean classExtra, boolean bgExtra){
+    public void addLanguage(String newLang){
         playerLanguages.addLanguage(newLang);
     }
 
@@ -198,8 +266,31 @@ public class PlayerCharacter {
         return playerSpeed;
     }
 
+<<<<<<< HEAD
     //ability scores (race and class)
     
+=======
+    public void setPlayerRace(Races playerRace) {
+        this.playerRace = playerRace;
+    }
+
+    public void setWeapon(String weapon) {
+        this.weapon = weapon;
+    }
+
+    public void setArmor(String armor) {
+        this.armor = armor;
+    }
+
+    public void setShield(String shield) {
+        this.shield = shield;
+    }
+
+    public void setSpell(String spell) {
+        this.spell = spell;
+    }
+
+>>>>>>> 309f2939a5cd03d0b6b218c28193eb10699f7952
     /**
      * Sets the player's strength score
      * @param str the strength rolled for the player

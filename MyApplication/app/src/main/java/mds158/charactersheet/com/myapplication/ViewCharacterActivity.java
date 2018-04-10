@@ -41,9 +41,9 @@ public class ViewCharacterActivity extends AppCompatActivity implements AdapterV
 
         sharedPreference = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
         names = sharedPreference.getStringSet("names", null);
-        view = findViewById(R.id.nameList);
+        view = findViewById(R.id.names);
         view.setOnItemSelectedListener(this);
-        ArrayAdapter<String> viewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, (List<String>) names);
+        ArrayAdapter<String> viewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, (1));
         viewAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         view.setAdapter(viewAdapter);
 

@@ -12,8 +12,10 @@ public class Speed {
      * @param classNum  the index number of the class of the player
      */
     public Speed(ArrayList<Integer> classSpeedData, int classNum){
-        classSpeeds = new ArrayList<Integer>(classSpeedData);
-        baseSpeed = classSpeeds.get(classNum);
+        if(!classSpeedData.isEmpty()){
+            classSpeeds = new ArrayList<Integer>(classSpeedData);
+            baseSpeed = classSpeeds.get(classNum);
+        }
     }
 
     /**

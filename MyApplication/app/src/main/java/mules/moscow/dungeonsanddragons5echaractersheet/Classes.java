@@ -35,7 +35,7 @@ public class Classes {
 	public void setPlayerClass(String playerClass) {
 		int location=-1;
 		for(int i=0; i<classList.size(); i++) {
-			if(playerClass == classList.get(i))
+			if(playerClass.equals(classList.get(i)))
 				location =i;
 		}
 		

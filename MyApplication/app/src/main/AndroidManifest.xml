@@ -19,16 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity 
+        <activity
             android:name=".CreateCharacterActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
-        
+
         <activity
             android:name=".ViewCharacterActivity"
             android:label="@string/title_activity_view_character"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
     </application>
+
 </manifest>

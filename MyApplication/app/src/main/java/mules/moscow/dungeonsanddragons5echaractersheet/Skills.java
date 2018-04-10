@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Skills {
 
 	private ArrayList<Boolean> playerSkills;
+	private ArrayList<Boolean> playerSkillOptions;
 	private ArrayList<String> skillList;
 	private ArrayList<ArrayList<Boolean>> classSkills;
 	//private int numSkills;
@@ -15,8 +16,8 @@ public class Skills {
          * @param classSkillsData list of available class skills
          */
 	public Skills(ArrayList<String> skillData, ArrayList<ArrayList<Boolean>> classSkillsData){
-		skillList = new ArrayList<String>(skillData);
-		classSkills = new ArrayList<ArrayList<Boolean>>(classSkillsData);
+		skillList = new ArrayList<>(skillData);
+		classSkills = new ArrayList<>(classSkillsData);
 		//numSkills =2;
 	}
 	
@@ -27,6 +28,10 @@ public class Skills {
 	public ArrayList<Boolean> getPlayerSkills() {
 		return playerSkills;
 	}
+
+	public void setSkillOptions(int classNum){
+	    playerSkillOptions = new ArrayList<>(classSkills.get(classNum));
+    }
 
         /**
          * Adds a skill to the list of skills known by the player

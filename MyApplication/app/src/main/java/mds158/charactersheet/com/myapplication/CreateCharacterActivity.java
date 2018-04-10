@@ -37,6 +37,8 @@ public class CreateCharacterActivity extends AppCompatActivity implements
                   religion, animalHandling, insight, medicine, perception, survival, deception, intimidation,
                   performance, persuasion;
 
+    SharedPreferences.Editor prefsEditor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -140,6 +142,8 @@ public class CreateCharacterActivity extends AppCompatActivity implements
         charisma = (EditText) findViewById(R.id.charisma);
         saveButton = (Button) findViewById(R.id.saveButton);
 
+        prefsEditor = sharedPreference.edit();
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view){
@@ -153,12 +157,12 @@ public class CreateCharacterActivity extends AppCompatActivity implements
                 character.setPlayerClass(classes.getSelectedItem().toString());
                 character.setPlayerAlignment(alignment.getSelectedItem().toString());
                 character.setPlayerBackground(background.getSelectedItem().toString());
-                character.setStrength(Integer.parseInt(strength.getText().toString()));
+                /*character.setStrength(Integer.parseInt(strength.getText().toString()));
                 character.setDexterity(Integer.parseInt(dexterity.getText().toString()));
                 character.setConstitution(Integer.parseInt(constitution.getText().toString()));
                 character.setIntelligence(Integer.parseInt(intelligence.getText().toString()));
                 character.setWisdom(Integer.parseInt(wisdom.getText().toString()));
-                character.setCharisma(Integer.parseInt(charisma.getText().toString()));
+                character.setCharisma(Integer.parseInt(charisma.getText().toString()));*/
                 character.addLanguage(language.getSelectedItem().toString());
 
                 character.setWeapon(weapon.getSelectedItem().toString());
@@ -166,7 +170,7 @@ public class CreateCharacterActivity extends AppCompatActivity implements
                 character.setShield(shield.getSelectedItem().toString());
                 character.setSpell(spell.getSelectedItem().toString());
 
-                character.setSkillOptions();
+                /*character.setSkillOptions();
                 if(acrobatics.isChecked()){
                     character.addPlayerSkill("Acrobatics");
                 }else if(animalHandling.isChecked()){
@@ -203,8 +207,8 @@ public class CreateCharacterActivity extends AppCompatActivity implements
                     character.addPlayerSkill("Stealth");
                 }else if(survival.isChecked()){
                     character.addPlayerSkill("Survival");
-                }
-                SharedPreferences.Editor prefsEditor = sharedPreference.edit();
+                }*/
+
                 Gson gson = new Gson();
                 String json = gson.toJson(character);
                 prefsEditor.putString(name.getText().toString(), json);

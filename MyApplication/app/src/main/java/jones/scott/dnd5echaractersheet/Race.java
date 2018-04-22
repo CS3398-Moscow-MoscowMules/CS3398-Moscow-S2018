@@ -4,6 +4,9 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.ColumnInfo;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by HEYSCOTT on 2/13/18.
  */
@@ -16,7 +19,7 @@ public class Race {
     private int srid;
 
     @ColumnInfo(name = "race")
-    private String race;
+    private String raceName;
 
     @ColumnInfo(name = "subrace")
     private String subrace;
@@ -57,8 +60,9 @@ public class Race {
     @ColumnInfo(name = "weaponProfs")
     private int weaponProf;
 
-    public Race(int srid, String race, String subrace, char size, int speed, String language1, String language2, String language3, int strMod, int dexMod, int conMod, int intMod, int wisMod, int chaMod, int weaponProf) {
-        this.race = race;
+    public Race(int srid, String raceName, String subrace, char size, int speed, String language1, String language2, String language3, int strMod, int dexMod, int conMod, int intMod, int wisMod, int chaMod, int weaponProf) {
+        this.srid = srid;
+        this.raceName = raceName;
         this.subrace = subrace;
         this.size = size;
         this.speed = speed;
@@ -78,16 +82,14 @@ public class Race {
         return srid;
     }
 
-    public void setSrID(int srid) {
-        this.srid = srid;
+    public void setSrid(int srid) { this.srid = srid; }
+
+    public String getRaceName() {
+        return raceName;
     }
 
-    public String getRace() {
-        return race;
-    }
-
-    public void setRace(String race) {
-        this.race = race;
+    public void setRaceName(String raceName) {
+        this.raceName = raceName;
     }
 
     public String getSubrace() {
@@ -201,7 +203,7 @@ public class Race {
                 new Race(2,"Dwarf", "Hill Dwarf", 'M', 25, "Common", "Dwarvish", "None", 0, 0, 2, 0, 1, 0, 1),
                 new Race(3, "Dwarf", "Mountain Dwarf", 'M', 25, "Common", "Dwarvish", "None",2, 0, 2, 0 ,0 ,0,1),
                 new Race(4, "Dwarf", "Duergar", 'M', 25, "Common", "Dwarvish", "Undercommon", 1, 0 ,2, 0 , 0, 0,1),
-                new Race(5, "Elf", "Drow", 'M', 30, "Common", "Elvish", "Drow Hand Signs", 0, 2, 0, 0, 0 , 1,3),
+                new Race(5, "Elf", "Drow Elf", 'M', 30, "Common", "Elvish", "Drow Hand Signs", 0, 2, 0, 0, 0 , 1,3),
                 new Race(6, "Elf", "High Elf", 'M', 30, "Common", "Elvish", "Extra", 0, 2, 0, 1, 0, 0, 2),
                 new Race(7, "Elf", "Wood Elf", 'M', 35, "Common", "Elvish", "None", 0, 2, 0, 0, 1 ,0, 2),
                 new Race(8, "Gnome", "Forest Gnome", 'S', 25, "Common", "Gnomish", "None",0, 1, 0 ,2, 0,0, 0),
@@ -212,8 +214,7 @@ public class Race {
                 new Race(13, "Half-Elf", "Half-Elf", 'M', 30, "Common", "Elvish", "Extra", 0, 0, 0, 0, 0, 2, 0),
                 new Race(14, "Half-Orc", "Half-Orc", 'M', 30, "Common", "Orc", "None", 2, 0 ,1, 0 ,0, 0, 0),
                 new Race(15, "Human", "Standard Human", 'M', 30, "Common", "Extra", "None", 1, 1, 1, 1, 1, 1, 0),
-                new Race(16, "Human", "Variant Human", 'M', 30, "Common", "Extra", "None", 0, 0, 0, 0, 0,0, 0),
-                new Race(17, "Tiefling", "Standard Tiefling", 'M', 30, "Common", "None", "None", 0, 0, 0, 0, 0, 2, 0)
+                new Race(16, "Human", "Variant Human", 'M', 30, "Common", "Extra", "None", 0, 0, 0, 0, 0,0, 0)
         };
     }
 

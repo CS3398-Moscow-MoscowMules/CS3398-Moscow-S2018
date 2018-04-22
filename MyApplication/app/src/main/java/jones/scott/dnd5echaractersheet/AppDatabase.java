@@ -22,7 +22,7 @@ import java.util.concurrent.Executors;
         Background.class,
         Skill.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
-    private static AppDatabase INSTANCE;
+    private static AppDatabase INSTANCE = null;
 
     public abstract RaceDAO raceDAO();
     public abstract RaceFeatureDAO raceFeatureDAO();
@@ -34,15 +34,16 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract SkillDAO skillDAO();
 
     public synchronized static AppDatabase getInstance(Context context) {
+        INSTANCE.destroyInstance();
         if (INSTANCE == null) {
+
             INSTANCE = buildDatabase(context);
         }
         return INSTANCE;
     }
 
     //use AppDatabase.buildDatabase(getApplicationContext) to get the instance of the database.
-    public static AppDatabase buildDatabase(final Context context) {
-        if(INSTANCE == null) {
+    private static AppDatabase buildDatabase(final Context context) {
             INSTANCE = Room.databaseBuilder(context,
                     AppDatabase.class,
                     "database")
@@ -53,18 +54,19 @@ public abstract class AppDatabase extends RoomDatabase {
                             Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
                                 @Override
                                 public void run() {
-                                    getInstance(context).raceDAO().insertRaces(Race.populatedData());
-                                    getInstance(context).raceFeatureDAO().insertRaceFeatures(RaceFeature.populatedData());
-                                    getInstance(context).languageDAO().insertLanguages(Language.populatedData());
-                                    getInstance(context).classDAO().insertClasses(Class.populatedData());
-                                    getInstance(context).classFeatureDAO().insertClassFeatures(ClassFeature.populatedData());
-                                    getInstance(context).weaponProficiencyDAO().insertWeaponProficiencies(WeaponProficiency.populatedData());
+                                    INSTANCE.raceDAO().insertRaces(Race.populatedData());
+                                    INSTANCE.raceFeatureDAO().insertRaceFeatures(RaceFeature.populatedData());
+                                    INSTANCE.languageDAO().insertLanguages(Language.populatedData());
+                                    INSTANCE.classDAO().insertClasses(Class.populatedData());
+                                    INSTANCE.classFeatureDAO().insertClassFeatures(ClassFeature.populatedData());
+                                    INSTANCE.backgroundDAO().insertBackgrounds(Background.populatedData());
+                                    INSTANCE.skillDAO().insertSkills(Skill.populatedData());
+                                    INSTANCE.weaponProficiencyDAO().insertWeaponProficiencies(WeaponProficiency.populatedData());
                                 }
                             });
                         }
                     })
-                    .build();
-        }
+                    .allowMainThreadQueries().build();
         return INSTANCE;
     }
 

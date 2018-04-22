@@ -4,17 +4,16 @@ import java.util.ArrayList;
 public class Speed {
 
     private int baseSpeed;
-    private ArrayList<Integer> classSpeeds;
+    private ArrayList<Integer> raceSpeeds;
 
     /**
      * constructor for the Speed class
-     * @param classSpeedData list of base speeds by class
-     * @param classNum  the index number of the class of the player
+     * @param raceSpeedData list of base speeds by class
      */
-    public Speed(ArrayList<Integer> classSpeedData, int classNum){
-        if(!classSpeedData.isEmpty()){
-            classSpeeds = new ArrayList<Integer>(classSpeedData);
-            baseSpeed = classSpeeds.get(classNum);
+    public Speed(ArrayList<Integer> raceSpeedData){
+        if(!raceSpeedData.isEmpty()){
+            raceSpeeds = new ArrayList<Integer>(raceSpeedData);
+
         }
     }
 
@@ -25,4 +24,6 @@ public class Speed {
     public int getBaseSpeed() {
         return baseSpeed;
     }
+
+    public void updateBaseSpeed(int classNum){ baseSpeed = raceSpeeds.get(classNum);}
 }

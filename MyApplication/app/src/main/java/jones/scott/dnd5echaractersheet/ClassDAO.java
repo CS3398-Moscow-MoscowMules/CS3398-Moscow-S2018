@@ -14,7 +14,7 @@ import java.util.List;
 @Dao
 public interface ClassDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insertClasses(Class... classs);
+    public void insertClasses(Class... classes);
 
     @Query("SELECT class FROM classes")
     public List<String> loadClasses();

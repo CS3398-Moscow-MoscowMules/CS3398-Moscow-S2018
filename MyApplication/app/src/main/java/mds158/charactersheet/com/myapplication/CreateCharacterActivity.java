@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -157,6 +158,7 @@ public class CreateCharacterActivity extends AppCompatActivity implements
                 character.setPlayerClass(classes.getSelectedItem().toString());
                 character.setPlayerAlignment(alignment.getSelectedItem().toString());
                 character.setPlayerBackground(background.getSelectedItem().toString());
+                character.updatePlayerSpeed();
                 /*character.setStrength(Integer.parseInt(strength.getText().toString()));
                 character.setDexterity(Integer.parseInt(dexterity.getText().toString()));
                 character.setConstitution(Integer.parseInt(constitution.getText().toString()));
@@ -164,6 +166,19 @@ public class CreateCharacterActivity extends AppCompatActivity implements
                 character.setWisdom(Integer.parseInt(wisdom.getText().toString()));
                 character.setCharisma(Integer.parseInt(charisma.getText().toString()));*/
                 character.addLanguage(language.getSelectedItem().toString());
+
+                Log.d("checkClass", Integer.toString(character.getPlayerClass()));
+                Log.d("checkRace", Integer.toString(character.getPlayerRace()));
+                Log.d("checkAlignment", character.getPlayerAlignment());
+                Log.d("checkBackground", Integer.toString(character.getPlayerBackground()));
+                Log.d("checkSpeed", Integer.toString(character.getPlayerSpeed().getBaseSpeed()));
+                Log.d("checkStr", Integer.toString(character.getStrength()));
+                Log.d("checkDex", Integer.toString(character.getDexterity()));
+                Log.d("checkCon", Integer.toString(character.getConstitution()));
+                Log.d("checkInt", Integer.toString(character.getIntelligence()));
+                Log.d("checkWis", Integer.toString(character.getWisdom()));
+                Log.d("checkCha", Integer.toString(character.getCharisma()));
+
 
                 character.setWeapon(weapon.getSelectedItem().toString());
                 character.setArmor(armor.getSelectedItem().toString());

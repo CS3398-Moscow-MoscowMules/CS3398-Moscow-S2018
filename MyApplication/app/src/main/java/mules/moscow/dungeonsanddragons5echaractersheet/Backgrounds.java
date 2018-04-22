@@ -31,7 +31,7 @@ public class Backgrounds {
 	public void setPlayerBackground(String playerBackground) {
 		int location=-1;
 		for(int i=0; i<backgroundList.size(); i++) {
-			if(playerBackground == backgroundList.get(i))
+			if(playerBackground.equals(backgroundList.get(i)))
 				location =i;
 		}
 		

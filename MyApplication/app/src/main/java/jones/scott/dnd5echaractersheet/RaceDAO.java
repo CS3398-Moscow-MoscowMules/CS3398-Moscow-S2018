@@ -16,11 +16,11 @@ public interface RaceDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public void insertRaces(Race... races);
 
-    @Query("SELECT race FROM races")
+    @Query("SELECT subrace FROM races")
     public List<String> loadRaces();
 
-    @Query("SELECT subrace FROM races")
-    public List<String> loadSubraces();
+    //@Query("SELECT subrace FROM races")
+    //public List<String> loadSubraces();
 
     @Query("SELECT subrace FROM races WHERE race = :race")
     public List<String> loadSubracesForRace(String race);

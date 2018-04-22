@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,9 +31,7 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Application app = new Application();
-        //AppDatabase database = AppDatabase.buildDatabase(app.getApplicationContext());
-        AppDatabase database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "database").allowMainThreadQueries().build();
+        AppDatabase database = AppDatabase.getInstance(getApplicationContext());
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -57,11 +56,30 @@ public class MainActivity extends AppCompatActivity implements
         ArrayList<Integer> speedData = new ArrayList<>((ArrayList<Integer>) database.raceDAO().loadSpeeds());
         ArrayList<String> skillData = new ArrayList<>((ArrayList<String>) database.skillDAO().loadSkills());
 
+        Log.d("SpeedSize", Integer.toString(speedData.size()));
+        Log.d("raceSize", Integer.toString(raceData.size()));
+        Log.d("classSize", Integer.toString(classData.size()));
+        Log.d("bgSize", Integer.toString(backgroundData.size()));
+        Log.d("skillSize", Integer.toString(skillData.size()));
+
+        //Log.d("findRace", database.raceDAO().loadRaceInfo("Standard Tiefling").getSubrace());
+
+        for(int i =0; i< classData.size(); i++){
+            Log.d("ClassName", classData.get(i));
+        }
+
+        for(int i =0; i< raceData.size(); i++){
+            Log.d("RaceName", raceData.get(i));
+        }
+
+        for(int i =0; i<speedData.size(); i++)
+            Log.d("speedData", Integer.toString(speedData.get(i)));
+
         ArrayList<ArrayList<String>> startingLangs = new ArrayList<>();
         int i = 0;
         while (i < raceData.size()) {
-            startingLangs.add((ArrayList<String>) Arrays.asList(database.raceDAO().loadLanguage1(raceData.get(i)),
-                    database.raceDAO().loadLanguage2(raceData.get(i)), database.raceDAO().loadLanguage3(raceData.get(i))));
+            startingLangs.add(new ArrayList<String>((Arrays.asList(database.raceDAO().loadLanguage1(raceData.get(i)),
+                    database.raceDAO().loadLanguage2(raceData.get(i)), database.raceDAO().loadLanguage3(raceData.get(i))))));
             i++;
         }
 
@@ -73,12 +91,12 @@ public class MainActivity extends AppCompatActivity implements
         ArrayList<ArrayList<Boolean>> classSkillData = new ArrayList<>();
         i = 0;
         while (i < raceData.size()) {
-            classSkillData.add((ArrayList<Boolean>) Arrays.asList(Boolean.parseBoolean(database.classDAO().loadAcrobatics(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadAnimalHandling(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadArcana(raceData.get(i))),
+            classSkillData.add(new ArrayList<Boolean>(Arrays.asList(Boolean.parseBoolean(database.classDAO().loadAcrobatics(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadAnimalHandling(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadArcana(raceData.get(i))),
                     Boolean.parseBoolean(database.classDAO().loadAthletics(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadDeception(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadHistory(raceData.get(i))),
                     Boolean.parseBoolean(database.classDAO().loadInsight(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadIntimidation(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadInvestigation(raceData.get(i))),
                     Boolean.parseBoolean(database.classDAO().loadMedicine(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadNature(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadPerception(raceData.get(i))),
                     Boolean.parseBoolean(database.classDAO().loadPerformance(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadPersuasion(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadReligion(raceData.get(i))),
-                    Boolean.parseBoolean(database.classDAO().loadSleightOfHand(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadStealth(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadSurvival(raceData.get(i)))));
+                    Boolean.parseBoolean(database.classDAO().loadSleightOfHand(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadStealth(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadSurvival(raceData.get(i))))));
             i++;
         }
 

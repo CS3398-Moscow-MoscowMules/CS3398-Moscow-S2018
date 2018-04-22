@@ -1,5 +1,7 @@
 package mules.moscow.dungeonsanddragons5echaractersheet;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -57,27 +59,22 @@ public class PlayerCharacter {
             }
         }
 
-
+        Log.d("HealthWorking", Integer.toString(healthData.size()));
+        Log.d("RaceWorking", Integer.toString(raceData.size()));
         playerRace = new Races(raceData);
         playerClass = new Classes(classData, healthData);
+        Log.d("ClassWorking", Integer.toString(classData.size()));
+        for(int j=0; j<classData.size(); j++)
+            //Log.d("CLASSESDATA", classData.get(j));
         playerBackground = new Backgrounds(backgroundData);
         playerAlignment = new Alignments();
-<<<<<<< HEAD
-        //playerSkills = new Skills(skillData, classSkillsData);
-        hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();
-        playerFeatures = new Features(featuresData);                                //Does this need anything aditional to make it happen? (looks like no?)
-        playerTraits = new Traits(traitData);                                       //Does this need anything aditional to make it happen? (looks like no?)
-        //playerLanguages = new Languages(languageData, startingLangs, extraLangs);
-              
-=======
         playerSkills = new Skills(skillData, classSkillsData);
-
+        Log.d("SkillWorking", Integer.toString(skillData.size()));
         playerFeatures = new Features(featuresData);                                //Does this need anything aditional to make it happen? (looks like no)
         playerTraits = new Traits(traitData);                                       //Does this need anything aditional to make it happen? (looks like no)
         playerLanguages = new Languages(languageData, extraLangs);
         this.startingLangs = startingLangs;
-        playerSpeed = new Speed(classSpeedData, playerClass.getPlayerClass());      //Does this need anything aditional to make it happen? (looks like no)
->>>>>>> 309f2939a5cd03d0b6b218c28193eb10699f7952
+        playerSpeed = new Speed(classSpeedData);      //Does this need anything aditional to make it happen? (looks like no)
 
         strength = new AbilityScore(0, modifierData.get(0));
         dexterity = new AbilityScore(0, modifierData.get(1));
@@ -94,7 +91,6 @@ public class PlayerCharacter {
         //increase Half elf by 1 for two of choice
     }
 
-    // Things that don't depend on other things when being set
     /**
      * returns the character's name
      * @return the character's name
@@ -123,14 +119,8 @@ public class PlayerCharacter {
      * allows the playerClass to be set individually from PlayerCharacter
      * @param givenClass the player's chosen class
      */
-<<<<<<< HEAD
-    public void setPlayerClass( String playerClass ) {
-        playerClass.setPlayerClass( playerClass );
-        setPlayerSpeed( playerClass );
-=======
     public void setPlayerClass( String givenClass ) {
         playerClass.setPlayerClass( givenClass );
->>>>>>> 309f2939a5cd03d0b6b218c28193eb10699f7952
     }
     
     /**
@@ -149,6 +139,10 @@ public class PlayerCharacter {
         playerBackground.setPlayerBackground(givenBackground);
     }
 
+    public void updatePlayerSpeed(){
+        playerSpeed.updateBaseSpeed(playerClass.getPlayerClass());
+    }
+
     /**
      * updates known languages based on players class
      * can only be used after class has been set
@@ -156,22 +150,6 @@ public class PlayerCharacter {
     public void setKnownLanguages(){
         playerLanguages.setKnownLanguages(startingLangs, playerClass.getPlayerClass());
     }
-<<<<<<< HEAD
-    
-    //background (make later)
-    
-    
-    /**
-     * This is called automatically when playerClass is set
-     * @param p 
-     */
-    public void setPlayerSpeed( playerClass p )
-    {
-        playerSpeed = new Speed(classSpeedData, p.getPlayerClass());
-    }
-    
-=======
->>>>>>> 309f2939a5cd03d0b6b218c28193eb10699f7952
 
     /**
      * returns the player's race
@@ -266,10 +244,6 @@ public class PlayerCharacter {
         return playerSpeed;
     }
 
-<<<<<<< HEAD
-    //ability scores (race and class)
-    
-=======
     public void setPlayerRace(Races playerRace) {
         this.playerRace = playerRace;
     }
@@ -290,7 +264,6 @@ public class PlayerCharacter {
         this.spell = spell;
     }
 
->>>>>>> 309f2939a5cd03d0b6b218c28193eb10699f7952
     /**
      * Sets the player's strength score
      * @param str the strength rolled for the player

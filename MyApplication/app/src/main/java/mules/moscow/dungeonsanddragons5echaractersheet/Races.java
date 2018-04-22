@@ -2,6 +2,7 @@ package mules.moscow.dungeonsanddragons5echaractersheet;
 
 import java.util.ArrayList;
 
+
 public class Races {
 
 	private int playerRace;
@@ -31,7 +32,7 @@ public class Races {
 	public void setPlayerRace(String playerRace) {
 		int location=-1;
 		for(int i=0; i<raceList.size(); i++) {
-			if(playerRace == raceList.get(i))
+			if(playerRace.equals(raceList.get(i)))
 				location =i;
 		}
 		

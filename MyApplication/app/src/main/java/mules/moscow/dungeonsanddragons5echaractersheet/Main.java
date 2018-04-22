@@ -8,7 +8,7 @@ import java.util.Arrays;
 import jones.scott.dnd5echaractersheet.AppDatabase;
 
 public class Main {
-    Application app = new Application();
+    /*Application app = new Application();
     AppDatabase database = AppDatabase.buildDatabase(app.getApplicationContext());
     Alignments alignments = new Alignments();
 
@@ -43,22 +43,15 @@ public class Main {
         i++;
     }
      */
-    ArrayList<ArrayList<Integer>> modifierData = new ArrayList<>(Arrays.asList((ArrayList<Integer>)database.raceDAO().loadStrMods(),
+    /*(ArrayList<ArrayList<Integer>> modifierData = new ArrayList<>(Arrays.asList((ArrayList<Integer>)database.raceDAO().loadStrMods(),
             (ArrayList<Integer>)database.raceDAO().loadDexMods(), (ArrayList<Integer>)database.raceDAO().loadConMods(),
             (ArrayList<Integer>)database.raceDAO().loadIntMods(), (ArrayList<Integer>)database.raceDAO().loadWisMods(),
             (ArrayList<Integer>)database.raceDAO().loadChaMods()));
 
     //DatabaseToGui dbToGui = new DatabaseToGui(raceData, classData, backgroundData, alignmentList, languageData);
 
-<<<<<<< HEAD
-    //We will want to do this from the GUI, not here. Will delete later.
-    //private PlayerCharacter character = new PlayerCharacter(raceData, classData, /*backgroundData, skillData, */healthData,
-    //        featureData, traitData, languageData, /*startingLangs, */speedData, modifierData/*, skillData*/);
+   // private PlayerCharacter character = new PlayerCharacter(raceData, classData, /*backgroundData, skillData, healthData,
+   //         featureData, traitData, languageData, /*startingLangs, speedData, modifierData, ClassSkillData);
 
-=======
-   // private PlayerCharacter character = new PlayerCharacter(raceData, classData, /*backgroundData, skillData, */healthData,
-   //         featureData, traitData, languageData, /*startingLangs, */speedData, modifierData/*, ClassSkillData*/);
->>>>>>> 309f2939a5cd03d0b6b218c28193eb10699f7952
-
-
+*/
 }

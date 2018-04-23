@@ -78,33 +78,37 @@
         <item>Neutral Evil</item>
         <item>Chaotic Evil</item>
     </string-array>
-    <string-array name="language_arrays">
-        <item>Select Language</item>
-        <item>Abyssal</item>
-        <item>Aquan</item>
-        <item>Auran</item>
-        <item>Celestial</item>
-        <item>Common</item>
-        <item>Deep Speech</item>
-        <item>Draconic</item>
-        <item>Drow Hand Signs</item>
-        <item>Druidic</item>
-        <item>Dwarvish</item>
-        <item>Elvish</item>
-        <item>Giant</item>
-        <item>Gnomish</item>
-        <item>Goblin</item>
-        <item>Gnoll</item>
-        <item>Halfling</item>
-        <item>Ignan</item>
-        <item>Infernal</item>
-        <item>Orc</item>
-        <item>Primordial</item>
-        <item>Silent Speech</item>
-        <item>Sylvan</item>
-        <item>Terran</item>
-        <item>Undercommon</item>
-    </string-array>
+    
+    <!--************************************-->
+    <!--********Languages Checkboxes********-->
+    <!--************************************-->
+
+    <string name="languages">Language(s)</string>
+    <string name="Abyssal">Abyssal</string>
+    <string name="Aquan">Aquan</string>
+    <string name="Auran">Auran</string>
+    <string name="Celestial">Celestial</string>
+    <string name="Common">Common</string>
+    <string name="DeepSpeech">Deep Speech</string>
+    <string name="Draconic">Draconic</string>
+    <string name="Drow">Drow Hand Signs</string>
+    <string name="Druidic">Druidic</string>
+    <string name="Dwarvish">Dwarvish</string>
+    <string name="Elvish">Elvish</string>
+    <string name="Giant">Giant</string>
+    <string name="Gnomish">Gnomish</string>
+    <string name="Goblin">Goblin</string>
+    <string name="Gnoll">Gnoll</string>
+    <string name="Halfling">Halfling</string>
+    <string name="Ignan">Ignan</string>
+    <string name="Infernal">Infernal</string>
+    <string name="Orc">Orc</string>
+    <string name="Primordial">Primordial</string>
+    <string name="Silent">Silent Speech</string>
+    <string name="Sylvan">Sylvan</string>
+    <string name="Terran">Terran</string>
+    <string name="Undercommon">Undercommon</string>
+    
     <string-array name="armor_arrays">
         <item>Select Armor</item>
         <item>Padded</item>

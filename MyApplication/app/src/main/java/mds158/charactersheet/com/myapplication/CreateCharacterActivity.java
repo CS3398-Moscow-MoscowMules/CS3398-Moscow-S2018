@@ -159,12 +159,12 @@ public class CreateCharacterActivity extends AppCompatActivity implements
                 character.setPlayerAlignment(alignment.getSelectedItem().toString());
                 character.setPlayerBackground(background.getSelectedItem().toString());
                 character.updatePlayerSpeed();
-                /*character.setStrength(Integer.parseInt(strength.getText().toString()));
+                character.setStrength(Integer.parseInt(strength.getText().toString()));
                 character.setDexterity(Integer.parseInt(dexterity.getText().toString()));
                 character.setConstitution(Integer.parseInt(constitution.getText().toString()));
                 character.setIntelligence(Integer.parseInt(intelligence.getText().toString()));
                 character.setWisdom(Integer.parseInt(wisdom.getText().toString()));
-                character.setCharisma(Integer.parseInt(charisma.getText().toString()));*/
+                character.setCharisma(Integer.parseInt(charisma.getText().toString()));
                 character.addLanguage(language.getSelectedItem().toString());
 
                 Log.d("checkClass", Integer.toString(character.getPlayerClass()));

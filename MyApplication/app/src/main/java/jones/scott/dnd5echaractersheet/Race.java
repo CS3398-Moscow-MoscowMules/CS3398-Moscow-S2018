@@ -214,7 +214,9 @@ public class Race {
                 new Race(13, "Half-Elf", "Half-Elf", 'M', 30, "Common", "Elvish", "Extra", 0, 0, 0, 0, 0, 2, 0),
                 new Race(14, "Half-Orc", "Half-Orc", 'M', 30, "Common", "Orc", "None", 2, 0 ,1, 0 ,0, 0, 0),
                 new Race(15, "Human", "Standard Human", 'M', 30, "Common", "Extra", "None", 1, 1, 1, 1, 1, 1, 0),
-                new Race(16, "Human", "Variant Human", 'M', 30, "Common", "Extra", "None", 0, 0, 0, 0, 0,0, 0)
+                new Race(16, "Human", "Variant Human", 'M', 30, "Common", "Extra", "None", 0, 0, 0, 0, 0,0, 0),
+                new Race(17, "Tiefling", "Tiefling", 'M', 30, "Common", "None", "None", 0, 0, 0, 0, 0, 2, 0)
+
         };
     }
 

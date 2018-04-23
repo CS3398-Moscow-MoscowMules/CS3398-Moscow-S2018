@@ -56,11 +56,11 @@ public class MainActivity extends AppCompatActivity implements
         ArrayList<Integer> speedData = new ArrayList<>((ArrayList<Integer>) database.raceDAO().loadSpeeds());
         ArrayList<String> skillData = new ArrayList<>((ArrayList<String>) database.skillDAO().loadSkills());
 
-        Log.d("SpeedSize", Integer.toString(speedData.size()));
         Log.d("raceSize", Integer.toString(raceData.size()));
         Log.d("classSize", Integer.toString(classData.size()));
         Log.d("bgSize", Integer.toString(backgroundData.size()));
         Log.d("skillSize", Integer.toString(skillData.size()));
+        Log.d("database", getDatabasePath("database").getAbsolutePath());
 
         //Log.d("findRace", database.raceDAO().loadRaceInfo("Standard Tiefling").getSubrace());
 

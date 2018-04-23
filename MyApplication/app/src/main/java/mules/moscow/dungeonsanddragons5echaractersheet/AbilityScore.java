@@ -1,4 +1,6 @@
 package mules.moscow.dungeonsanddragons5echaractersheet;
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class AbilityScore {
@@ -23,7 +25,9 @@ public class AbilityScore {
          * @param classIndex The modifier for the score given the player's class(?)
          */
 	public void setScore(int num, int raceIndex, int classIndex) {
-		this.score = num + RaceModifiers.get(raceIndex) + ClassModifiers.get(classIndex);
+		Log.d("r, c, rSize", Integer.toString(raceIndex) + ", " + Integer.toString(classIndex) + ", " + Integer.toString(RaceModifiers.size()));
+
+		this.score = num + RaceModifiers.get(raceIndex);
 
 		if(score >= 19) {
 			this.modifier = 5;

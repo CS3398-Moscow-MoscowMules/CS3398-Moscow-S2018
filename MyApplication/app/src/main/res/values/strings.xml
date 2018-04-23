@@ -14,32 +14,23 @@
     <string name="hintName">Name</string>
     <string-array name="race_arrays">
         <item>Select Race</item>
-        <item>Aarakocra</item>
-        <item>Aasimar</item>
-        <item>Bugbear</item>
         <item>Dragonborn</item>
-        <item>Dwarf</item>
-        <item>Elf</item>
-        <item>Feral Tiefling</item>
-        <item>Firbolg</item>
-        <item>Genasi</item>
-        <item>Gnome</item>
-        <item>Goblin</item>
-        <item>Goliath</item>
+        <item>Hill Dwarf</item>
+        <item>Mountain Dwarf</item>
+        <item>Duergar</item>
+        <item>Drow Elf</item>
+        <item>High Elf</item>
+        <item>Wood Elf</item>
+        <item>Forest Gnome</item>
+        <item>Rock Gnome</item>
+        <item>Lightfoot Halfling</item>
+        <item>Stout Halfling</item>
+        <item>Ghostwise Halfling</item>
         <item>Half-Elf</item>
-        <item>Halfling</item>
         <item>Half-Orc</item>
-        <item>Hobgoblin</item>
-        <item>Human</item>
-        <item>Kenku</item>
-        <item>Kobold</item>
-        <item>Lizardfolk</item>
-        <item>Orc</item>
-        <item>Tabaxi</item>
+        <item>Standard Human</item>
+        <item>Variant Human</item>
         <item>Tiefling</item>
-        <item>Tortle</item>
-        <item>Triton</item>
-        <item>Yuan-ti Pureblood</item>
     </string-array>
     <string-array name="class_arrays">
         <item>Select Class</item>
@@ -55,41 +46,25 @@
         <item>Sorcerer</item>
         <item>Warlock</item>
         <item>Wizard</item>
-        <item>Blood Hunter</item>
     </string-array>
     <string-array name="background_arrays">
         <item>Select Background</item>
         <item>Acolyte</item>
-        <item>Anthropologist</item>
-        <item>Archaeologist</item>
         <item>Charlatan</item>
-        <item>City Watch/Investigator</item>
-        <item>Clan Crafter</item>
-        <item>Cloistered Scholar</item>
-        <item>Courtier</item>
-        <item>Criminal/Spy</item>
+        <item>Criminal</item>
         <item>Entertainer</item>
-        <item>Faction Agent</item>
-        <item>Far Traveler</item>
         <item>Folk Hero</item>
         <item>Gladiator</item>
-        <item>Guild Artisan/Guild Merchant</item>
-        <item>Haunted One</item>
+        <item>Guild Artisan</item>
         <item>Hermit</item>
-        <item>Inheritor</item>
         <item>Knight</item>
-        <item>Knight of the Order</item>
-        <item>Mercenary Veteran</item>
         <item>Noble</item>
         <item>Outlander</item>
         <item>Pirate</item>
         <item>Sage</item>
         <item>Sailor</item>
         <item>Soldier</item>
-        <item>Urban Bounty Hunter</item>
         <item>Urchin</item>
-        <item>Uthgardt Tribe Member</item>
-        <item>Waterdhavian Noble</item>
     </string-array>
     <string-array name="alignment_arrays">
         <item>Select Alignment</item>
@@ -112,6 +87,7 @@
         <item>Common</item>
         <item>Deep Speech</item>
         <item>Draconic</item>
+        <item>Drow Hand Signs</item>
         <item>Druidic</item>
         <item>Dwarvish</item>
         <item>Elvish</item>
@@ -124,6 +100,7 @@
         <item>Infernal</item>
         <item>Orc</item>
         <item>Primordial</item>
+        <item>Silent Speech</item>
         <item>Sylvan</item>
         <item>Terran</item>
         <item>Undercommon</item>

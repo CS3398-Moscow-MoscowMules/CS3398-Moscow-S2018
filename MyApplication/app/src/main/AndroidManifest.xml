@@ -29,6 +29,12 @@
             android:label="@string/title_activity_view_character"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
+
+        <activity
+            android:name=".ShowCharacter"
+            android:label="ShowCharacterActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

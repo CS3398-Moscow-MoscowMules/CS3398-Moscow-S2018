@@ -54,13 +54,10 @@
         <item>Criminal</item>
         <item>Entertainer</item>
         <item>Folk Hero</item>
-        <item>Gladiator</item>
         <item>Guild Artisan</item>
         <item>Hermit</item>
-        <item>Knight</item>
         <item>Noble</item>
         <item>Outlander</item>
-        <item>Pirate</item>
         <item>Sage</item>
         <item>Sailor</item>
         <item>Soldier</item>
@@ -78,7 +75,7 @@
         <item>Neutral Evil</item>
         <item>Chaotic Evil</item>
     </string-array>
-    
+
     <!--************************************-->
     <!--********Languages Checkboxes********-->
     <!--************************************-->
@@ -108,7 +105,7 @@
     <string name="Sylvan">Sylvan</string>
     <string name="Terran">Terran</string>
     <string name="Undercommon">Undercommon</string>
-    
+
     <string-array name="armor_arrays">
         <item>Select Armor</item>
         <item>Padded</item>
@@ -571,6 +568,7 @@
     <string name="Persuasion">Persuasion</string>
     
     <string name="save">Save</string>
+    <string name="next">Next</string>
 
     <!--Strings and String arrays used in View Character page-->
 

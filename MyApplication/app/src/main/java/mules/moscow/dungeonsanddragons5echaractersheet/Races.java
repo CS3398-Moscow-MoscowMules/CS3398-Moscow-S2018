@@ -25,6 +25,8 @@ public class Races {
 		return playerRace;
 	}
 
+	public String getPlayerRaceString() { return raceList.get(playerRace); }
+
         /**
          * Sets the player's race
          * @param playerRace the race to be given to the player

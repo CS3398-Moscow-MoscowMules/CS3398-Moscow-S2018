@@ -25,6 +25,11 @@
         </activity>
 
         <activity
+            android:name=".CreateCharacterPg2Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+
+        <activity
             android:name=".ViewCharacterActivity"
             android:label="@string/title_activity_view_character"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

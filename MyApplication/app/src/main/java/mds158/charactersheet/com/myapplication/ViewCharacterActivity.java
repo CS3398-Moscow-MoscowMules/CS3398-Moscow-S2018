@@ -20,6 +20,8 @@ import android.widget.Spinner;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -29,6 +31,7 @@ public class ViewCharacterActivity extends AppCompatActivity implements AdapterV
     private SharedPreferences sharedPreference;
     private Spinner view;
     private Set<String> names;
+    private static ArrayList<String> characterList;
     private Button viewButton;
 
     @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
@@ -42,8 +45,9 @@ public class ViewCharacterActivity extends AppCompatActivity implements AdapterV
         sharedPreference = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
         names = sharedPreference.getStringSet("names", null);
         view = findViewById(R.id.names);
+        characterList = new ArrayList<>(names);
         view.setOnItemSelectedListener(this);
-        ArrayAdapter<String> viewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, (1));
+        ArrayAdapter<String> viewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, characterList);
         viewAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         view.setAdapter(viewAdapter);
 
@@ -64,8 +68,8 @@ public class ViewCharacterActivity extends AppCompatActivity implements AdapterV
                 Gson gson = new Gson();
                 String json = sharedPreference.getString(text, "");
                 PlayerCharacter character = gson.fromJson(json, PlayerCharacter.class);
-                Intent intent = new Intent((Context) context, ShowCharacter.class);
-                intent.putExtra("Character", (Serializable) character);
+                Intent intent = new Intent(getApplicationContext(), ShowCharacter.class);
+                ShowCharacter.setCharacter(character);
                 startActivity(intent);
             }
         });
@@ -79,5 +83,14 @@ public class ViewCharacterActivity extends AppCompatActivity implements AdapterV
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public static void removeCharacterFromList(String name){
+        for(int i=0; i<characterList.size(); i++){
+            if(characterList.get(i).equals(name)) {
+                characterList.remove(i);
+                break;
+            }
+        }
     }
 }

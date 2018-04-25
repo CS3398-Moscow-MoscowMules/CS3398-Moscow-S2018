@@ -22,6 +22,9 @@ public interface ClassDAO {
     @Query("SELECT health FROM classes")
     public List<Integer> loadHealths();
 
+    @Query("SELECT numSkills FROM classes")
+    public List<Integer> loadNumSkills();
+
     @Query("SELECT acrobatics FROM classes WHERE class = :className")
     public String loadAcrobatics(String className);
 

@@ -5,6 +5,10 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import jones.scott.dnd5echaractersheet.AppDatabase;
+import jones.scott.dnd5echaractersheet.BackgroundDAO;
+import mds158.charactersheet.com.myapplication.MainActivity;
+
 public class PlayerCharacter {
     private String characterName;
     private Races playerRace;
@@ -47,17 +51,10 @@ public class PlayerCharacter {
                            ArrayList<String> featuresData, ArrayList<String> traitData,
                            ArrayList<String> languageData, ArrayList<ArrayList<String>> startingLangs,
                            ArrayList<Integer> classSpeedData, ArrayList<ArrayList<Integer>> modifierData,
-                           ArrayList<ArrayList<Boolean>> classSkillsData){
+                           ArrayList<ArrayList<Boolean>> classSkillsData, ArrayList<ArrayList<String>> bgSkillData,
+                           ArrayList<Integer> bgLangData, ArrayList<Integer> numSkillsData){
 
-        int extraLangs=0;
-        for(int i =0; i<startingLangs.size(); i++){
-            if(startingLangs.get(i).equals("None"))
-                startingLangs.remove(i);
-            else if (startingLangs.get(i).equals("Extra")) {
-                extraLangs++;
-                startingLangs.remove(i);
-            }
-        }
+
 
         Log.d("HealthWorking", Integer.toString(healthData.size()));
         Log.d("RaceWorking", Integer.toString(raceData.size()));
@@ -68,11 +65,11 @@ public class PlayerCharacter {
             //Log.d("CLASSESDATA", classData.get(j));
         playerBackground = new Backgrounds(backgroundData);
         playerAlignment = new Alignments();
-        playerSkills = new Skills(skillData, classSkillsData);
+        playerSkills = new Skills(skillData, classSkillsData, bgSkillData, numSkillsData);
         Log.d("SkillWorking", Integer.toString(skillData.size()));
         playerFeatures = new Features(featuresData);                                //Does this need anything aditional to make it happen? (looks like no)
         playerTraits = new Traits(traitData);                                       //Does this need anything aditional to make it happen? (looks like no)
-        playerLanguages = new Languages(languageData, extraLangs);
+        playerLanguages = new Languages(languageData, startingLangs, bgLangData);
         this.startingLangs = startingLangs;
         playerSpeed = new Speed(classSpeedData);      //Does this need anything aditional to make it happen? (looks like no)
 
@@ -83,7 +80,6 @@ public class PlayerCharacter {
         wisdom = new AbilityScore(0, modifierData.get(4));
         charisma = new AbilityScore(0, modifierData.get(5));
 
-        hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();
     }
 
 
@@ -144,14 +140,6 @@ public class PlayerCharacter {
     }
 
     /**
-     * updates known languages based on players class
-     * can only be used after class has been set
-     */
-    public void setKnownLanguages(){
-        playerLanguages.setKnownLanguages(startingLangs, playerClass.getPlayerClass());
-    }
-
-    /**
      * returns the player's race
      * @return the player's race
      */
@@ -159,6 +147,7 @@ public class PlayerCharacter {
         return playerRace.getPlayerRace();
     }
 
+    public String getPlayerRaceString() {return playerRace.getPlayerRaceString(); }
     /**
      * returns the player's class
      * @return the player's class
@@ -166,6 +155,8 @@ public class PlayerCharacter {
     public int getPlayerClass() {
         return playerClass.getPlayerClass();
     }
+
+    public String getPlayerClassString() { return playerClass.getPlayerClassString(); }
 
     /**
      * returns the player's background
@@ -175,6 +166,8 @@ public class PlayerCharacter {
         return playerBackground.getPlayerBackground();
     }
 
+    public String getPlayerBackgroundString() { return playerBackground.getPlayerBackgroundString(); }
+
     /**
      * returns a list of the player's skills
      * @return a list of the player's skills
@@ -183,8 +176,26 @@ public class PlayerCharacter {
         return playerSkills.getPlayerSkills();
     }
 
+    public void updateHitPoints(){
+        playerClass.setBaseHitPoints();
+        hitPoints = playerClass.getBaseHitPoints() + constitution.getModifier();}
 
-    public void setSkillOptions(){ playerSkills.setSkillOptions(playerClass.getPlayerClass());}
+    public ArrayList<String> getPlayerSkillsStrings() { return playerSkills.getSkillListStrings(); }
+
+    public ArrayList<Boolean> getPlayerSkillOptions() { return playerSkills.getPlayerSkillOptions(); }
+
+    public ArrayList<String> getSkillList() {return playerSkills.getSkillList();}
+
+    public int getNumSkills() { return playerSkills.getNumSkills(); }
+
+    public void setSkillOptions(){ playerSkills.setSkillOptions(playerClass.getPlayerClass(), playerBackground.getPlayerBackground());}
+
+    public void setLanguageOptions() {
+        playerLanguages.setKnownLanguages(startingLangs, playerRace.getPlayerRace(), playerBackground.getPlayerBackground());
+
+    }
+
+    public int getNumLangs(){return playerLanguages.getNumLangs();}
 
     public void addPlayerSkill(String skill){playerSkills.addPlayerSkill(skill);}
 
@@ -240,9 +251,7 @@ public class PlayerCharacter {
      * returns the player's speed
      * @return the player's speed
      */
-    public Speed getPlayerSpeed() {
-        return playerSpeed;
-    }
+    public int getPlayerSpeed() {return playerSpeed.getBaseSpeed();}
 
     public void setPlayerRace(Races playerRace) {
         this.playerRace = playerRace;

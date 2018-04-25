@@ -24,6 +24,7 @@ public class Backgrounds {
 		return playerBackground;
 	}
 
+	public String getPlayerBackgroundString() { return backgroundList.get(playerBackground); }
         /**
          * Sets the player's background to the background passed
          * @param playerBackground the background to be set for the player

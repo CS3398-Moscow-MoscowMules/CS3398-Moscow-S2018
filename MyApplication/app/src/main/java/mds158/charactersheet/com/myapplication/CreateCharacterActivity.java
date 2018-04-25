@@ -1,21 +1,18 @@
 package mds158.charactersheet.com.myapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.view.View;
-
-import com.google.gson.Gson;
-
-import java.util.HashSet;
-import java.util.Set;
+import android.widget.Toast;
 
 import mules.moscow.dungeonsanddragons5echaractersheet.PlayerCharacter;
 
@@ -25,22 +22,11 @@ public class CreateCharacterActivity extends AppCompatActivity implements
     private SharedPreferences sharedPreference;
 
     private Spinner race;
-    private Spinner spell;
     private Spinner classes;
-    private Spinner weapon;
-    private Spinner shield;
-    private Spinner armor;
-    private Spinner language;
     private Spinner background;
     private Spinner alignment;
 
     private EditText name, strength, dexterity, constitution, intelligence, wisdom, charisma;
-
-    private CheckBox athletics, acrobatics, sleightOfHand, stealth, arcana, history, investigation, nature,
-            religion, animalHandling, insight, medicine, perception, survival, deception, intimidation,
-            performance, persuasion, abyssal, aquan, auran, celestial, common, deepSpeech, draconic, druidic, dwarvish,
-            elvish, giant, gnomish, goblin, gnoll, halfling, ignan, infernal, orc, primordial, sylvan,
-            terran, undercommon;
 
     SharedPreferences.Editor prefsEditor;
 
@@ -60,13 +46,6 @@ public class CreateCharacterActivity extends AppCompatActivity implements
         raceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         race.setAdapter(raceAdapter);
 
-        spell = findViewById(R.id.spells);
-        spell.setOnItemSelectedListener(this);
-        ArrayAdapter<CharSequence> spellAdapter = ArrayAdapter.createFromResource(this,
-                R.array.spells_arrays, android.R.layout.simple_spinner_item);
-        spellAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spell.setAdapter(spellAdapter);
-
         classes = findViewById(R.id.classification);
         classes.setOnItemSelectedListener(this);
         ArrayAdapter<CharSequence> classAdapter = ArrayAdapter.createFromResource(this,
@@ -74,37 +53,6 @@ public class CreateCharacterActivity extends AppCompatActivity implements
         classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         classes.setAdapter(classAdapter);
 
-        weapon = findViewById(R.id.weapons_spinner);
-        weapon.setOnItemSelectedListener(this);
-        ArrayAdapter<CharSequence> weaponAdapter = ArrayAdapter.createFromResource(this,
-                R.array.weapons_arrays, android.R.layout.simple_spinner_item);
-        weaponAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        weapon.setAdapter(weaponAdapter);
-
-        shield = findViewById(R.id.shield_spinner);
-        shield.setOnItemSelectedListener(this);
-        ArrayAdapter<CharSequence> shieldAdapter = ArrayAdapter.createFromResource(this,
-                R.array.shield_arrays, android.R.layout.simple_spinner_item);
-        shieldAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        shield.setAdapter(shieldAdapter);
-
-        armor = findViewById(R.id.armor_spinner);
-        armor.setOnItemSelectedListener(this);
-        ArrayAdapter<CharSequence> armorAdapter = ArrayAdapter.createFromResource(this,
-                R.array.armor_arrays, android.R.layout.simple_spinner_item);
-        armorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        armor.setAdapter(armorAdapter);
-
-        /* **
-            THIS SPINNER WAS REPLACED WITH CHECKBOXES.
-
-        language = findViewById(R.id.Languages);
-        language.setOnItemSelectedListener(this);
-        ArrayAdapter<CharSequence> languageAdapter = ArrayAdapter.createFromResource(this,
-                R.array.language_arrays, android.R.layout.simple_spinner_item);
-        languageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        language.setAdapter(languageAdapter);
-        */
         alignment = findViewById(R.id.alignment);
         alignment.setOnItemSelectedListener(this);
         ArrayAdapter<CharSequence> alignmentAdapter = ArrayAdapter.createFromResource(this,
@@ -120,55 +68,9 @@ public class CreateCharacterActivity extends AppCompatActivity implements
         background.setAdapter(backgroundAdapter);
 
 
-        Button saveButton;
+        Button nextButton;
 
         sharedPreference = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
-        athletics = (CheckBox) findViewById(R.id.athletics);
-        acrobatics = (CheckBox) findViewById(R.id.acrobatics);
-        sleightOfHand = (CheckBox) findViewById(R.id.sleightOfHand);
-        stealth = (CheckBox) findViewById(R.id.stealth);
-        arcana = (CheckBox) findViewById(R.id.arcana);
-        history = (CheckBox) findViewById(R.id.history);
-        investigation = (CheckBox) findViewById(R.id.investigation);
-        nature = (CheckBox) findViewById(R.id.nature);
-        religion = (CheckBox) findViewById(R.id.religion);
-        animalHandling = (CheckBox) findViewById(R.id.animalHandling);
-        insight = (CheckBox) findViewById(R.id.insight);
-        medicine = (CheckBox) findViewById(R.id.medicine);
-        perception = (CheckBox) findViewById(R.id.perception);
-        survival = (CheckBox) findViewById(R.id.survival);
-        deception = (CheckBox) findViewById(R.id.deception);
-        intimidation = (CheckBox) findViewById(R.id.intimidation);
-        performance = (CheckBox) findViewById(R.id.performance);
-        persuasion = (CheckBox) findViewById(R.id.persuasion);
-
-        /* *****************************************************
-         ********************Languages**************************
-         *******************************************************/
-
-        abyssal = (CheckBox) findViewById(R.id.Abyssal);
-        aquan = (CheckBox) findViewById(R.id.Aquan);
-        auran = (CheckBox) findViewById(R.id.Auran);
-        celestial = (CheckBox) findViewById(R.id.Celestial);
-        common = (CheckBox) findViewById(R.id.Common);
-        deepSpeech = (CheckBox) findViewById(R.id.DeepSpeech);
-        draconic = (CheckBox) findViewById(R.id.Draconic);
-        druidic = (CheckBox) findViewById(R.id.Druidic);
-        dwarvish = (CheckBox) findViewById(R.id.Dwarvish);
-        elvish = (CheckBox) findViewById(R.id.Elvish);
-        giant = (CheckBox) findViewById(R.id.Giant);
-        gnomish = (CheckBox) findViewById(R.id.Gnomish);
-        goblin = (CheckBox) findViewById(R.id.Goblin);
-        gnoll = (CheckBox) findViewById(R.id.Gnoll);
-        halfling = (CheckBox) findViewById(R.id.Halfling);
-        ignan = (CheckBox) findViewById(R.id.Ignan);
-        infernal = (CheckBox) findViewById(R.id.Infernal);
-        orc = (CheckBox) findViewById(R.id.Orc);
-        primordial = (CheckBox) findViewById(R.id.Primordial);
-        sylvan = (CheckBox) findViewById(R.id.Sylvan);
-        terran = (CheckBox) findViewById(R.id.Terran);
-        undercommon = (CheckBox) findViewById(R.id.Undercommon);
-
         name = (EditText) findViewById(R.id.name);
         strength = (EditText) findViewById(R.id.strength);
         dexterity = (EditText) findViewById(R.id.dexterity);
@@ -176,82 +78,67 @@ public class CreateCharacterActivity extends AppCompatActivity implements
         intelligence = (EditText) findViewById(R.id.intelligence);
         wisdom = (EditText) findViewById(R.id.wisdom);
         charisma = (EditText) findViewById(R.id.charisma);
-        saveButton = (Button) findViewById(R.id.saveButton);
+        nextButton = (Button) findViewById(R.id.nextButton);
 
         prefsEditor = sharedPreference.edit();
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick (View view){
                 //write everything to variables
                 //put functions to change variables
                 //write to sharedPreferences
+                boolean inBounds = (Integer.parseInt(strength.getText().toString())>=1 &&
+                        Integer.parseInt(strength.getText().toString()) <=20) &&
+                        (Integer.parseInt(dexterity.getText().toString())>=1 &&
+                        Integer.parseInt(dexterity.getText().toString()) <=20) &&
+                        (Integer.parseInt(constitution.getText().toString())>=1 &&
+                        Integer.parseInt(constitution.getText().toString()) <=20) &&
+                        (Integer.parseInt(intelligence.getText().toString())>=1 &&
+                        Integer.parseInt(intelligence.getText().toString()) <=20) &&
+                        (Integer.parseInt(wisdom.getText().toString())>=1 &&
+                        Integer.parseInt(wisdom.getText().toString()) <=20) &&
+                        (Integer.parseInt(charisma.getText().toString())>=1 &&
+                        Integer.parseInt(charisma.getText().toString()) <=20);
 
-                PlayerCharacter character = MainActivity.getPlayerCharacter();
-                character.setCharacterName(name.getText().toString());
-                character.setPlayerRace(race.getSelectedItem().toString());
-                character.setPlayerClass(classes.getSelectedItem().toString());
-                character.setPlayerAlignment(alignment.getSelectedItem().toString());
-                character.setPlayerBackground(background.getSelectedItem().toString());
-                /*character.setStrength(Integer.parseInt(strength.getText().toString()));
-                character.setDexterity(Integer.parseInt(dexterity.getText().toString()));
-                character.setConstitution(Integer.parseInt(constitution.getText().toString()));
-                character.setIntelligence(Integer.parseInt(intelligence.getText().toString()));
-                character.setWisdom(Integer.parseInt(wisdom.getText().toString()));
-                character.setCharisma(Integer.parseInt(charisma.getText().toString()));*/
-                character.addLanguage(language.getSelectedItem().toString());
+                if((inBounds)) {
+                    PlayerCharacter character = MainActivity.getPlayerCharacter();
+                    character.setCharacterName(name.getText().toString());
+                    CreateCharacterPg2Activity.setName(name.getText().toString());
+                    character.setPlayerRace(race.getSelectedItem().toString());
+                    character.setPlayerClass(classes.getSelectedItem().toString());
+                    character.setPlayerAlignment(alignment.getSelectedItem().toString());
+                    character.setPlayerBackground(background.getSelectedItem().toString());
+                    character.updatePlayerSpeed();
+                    character.updateHitPoints();
+                    character.setSkillOptions();
+                    character.setLanguageOptions();
+                    character.setStrength(Integer.parseInt(strength.getText().toString()));
+                    character.setDexterity(Integer.parseInt(dexterity.getText().toString()));
+                    character.setConstitution(Integer.parseInt(constitution.getText().toString()));
+                    character.setIntelligence(Integer.parseInt(intelligence.getText().toString()));
+                    character.setWisdom(Integer.parseInt(wisdom.getText().toString()));
+                    character.setCharisma(Integer.parseInt(charisma.getText().toString()));
 
-                character.setWeapon(weapon.getSelectedItem().toString());
-                character.setArmor(armor.getSelectedItem().toString());
-                character.setShield(shield.getSelectedItem().toString());
-                character.setSpell(spell.getSelectedItem().toString());
+                    Log.d("checkClass", Integer.toString(character.getPlayerClass()));
+                    Log.d("checkRace", Integer.toString(character.getPlayerRace()));
+                    Log.d("checkAlignment", character.getPlayerAlignment());
+                    Log.d("checkBackground", Integer.toString(character.getPlayerBackground()));
+                    //Log.d("checkSpeed", Integer.toString(character.getPlayerSpeed().getBaseSpeed()));
+                    Log.d("checkStr", Integer.toString(character.getStrength()));
+                    Log.d("checkDex", Integer.toString(character.getDexterity()));
+                    Log.d("checkCon", Integer.toString(character.getConstitution()));
+                    Log.d("checkInt", Integer.toString(character.getIntelligence()));
+                    Log.d("checkWis", Integer.toString(character.getWisdom()));
+                    Log.d("checkCha", Integer.toString(character.getCharisma()));
 
-                /*character.setSkillOptions();
-                if(acrobatics.isChecked()){
-                    character.addPlayerSkill("Acrobatics");
-                }else if(animalHandling.isChecked()){
-                    character.addPlayerSkill("Animal Handling");
-                }else if(arcana.isChecked()){
-                    character.addPlayerSkill("Arcana");
-                }else if(athletics.isChecked()){
-                    character.addPlayerSkill("Athletics");
-                }else if(deception.isChecked()){
-                    character.addPlayerSkill("Deception");
-                }else if(history.isChecked()){
-                    character.addPlayerSkill("History");
-                }else if(insight.isChecked()){
-                    character.addPlayerSkill("Insight");
-                }else if(intimidation.isChecked()){
-                    character.addPlayerSkill("Intimidation");
-                }else if(investigation.isChecked()){
-                    character.addPlayerSkill("Investigation");
-                }else if(medicine.isChecked()){
-                    character.addPlayerSkill("Medicine");
-                }else if(nature.isChecked()){
-                    character.addPlayerSkill("Nature");
-                }else if(perception.isChecked()){
-                    character.addPlayerSkill("Perception");
-                }else if(performance.isChecked()){
-                    character.addPlayerSkill("Performance");
-                }else if(persuasion.isChecked()){
-                    character.addPlayerSkill("Persuasion");
-                }else if(religion.isChecked()){
-                    character.addPlayerSkill("Religion");
-                }else if(sleightOfHand.isChecked()){
-                    character.addPlayerSkill("Sleight of Hand");
-                }else if(stealth.isChecked()){
-                    character.addPlayerSkill("Stealth");
-                }else if(survival.isChecked()){
-                    character.addPlayerSkill("Survival");
-                }*/
-
-                Gson gson = new Gson();
-                String json = gson.toJson(character);
-                prefsEditor.putString(name.getText().toString(), json);
-                Set<String> names = sharedPreference.getStringSet("names", new HashSet<String>());
-                names.add(name.getText().toString());
-                prefsEditor.putStringSet("names", names);
-                prefsEditor.apply();
+                    CreateCharacterPg2Activity.setCharacter(character);
+                    Intent intentCreatePg2 = new Intent(getApplicationContext(), CreateCharacterPg2Activity.class);
+                    startActivity(intentCreatePg2);
+                } else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "Ability Scores must be between 1 and 20", Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
         });
 

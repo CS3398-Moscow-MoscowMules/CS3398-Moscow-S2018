@@ -18,4 +18,13 @@ public interface BackgroundDAO {
 
     @Query("SELECT background FROM backgrounds")
     public List<String> loadBackgrounds();
+
+    @Query("SELECT skill1 FROM backgrounds WHERE background = :background")
+    public String loadSkill1(String background);
+
+    @Query("SELECT skill2 FROM backgrounds WHERE background = :background")
+    public String loadSkill2(String background);
+
+    @Query("SELECT extraLangs FROM backgrounds")
+    public List<Integer> loadExtraLangs();
 }

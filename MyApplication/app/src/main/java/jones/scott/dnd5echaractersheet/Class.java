@@ -24,6 +24,9 @@ public class Class {
     @ColumnInfo(name = "health")
     private int health;
 
+    @ColumnInfo(name = "numSkills")
+    private int numSkills;
+
     @ColumnInfo(name = "acrobatics")
     private String acrobatics;
 
@@ -78,10 +81,11 @@ public class Class {
     @ColumnInfo(name = "survival")
     private String survival;
 
-    public Class(int cid, String className, int health, String acrobatics, String animalHandling, String arcana, String athletics, String deception, String history, String insight, String intimidation, String investigation, String medicine, String nature, String perception, String performance, String persuasion, String religion, String sleightOfHand, String stealth, String survival) {
+    public Class(int cid, String className, int health, int numSkills, String acrobatics, String animalHandling, String arcana, String athletics, String deception, String history, String insight, String intimidation, String investigation, String medicine, String nature, String perception, String performance, String persuasion, String religion, String sleightOfHand, String stealth, String survival) {
         this.cid = cid;
         this.className = className;
         this.health = health;
+        this.numSkills = numSkills;
         this.acrobatics = acrobatics;
         this.animalHandling = animalHandling;
         this.arcana = arcana;
@@ -125,6 +129,10 @@ public class Class {
     public void setHealth(int health) {
         this.health = health;
     }
+
+    public int getNumSkills() { return numSkills; }
+
+    public void setNumSkills(int numSkills) { this.numSkills = numSkills; }
 
     public String getAcrobatics() {
         return acrobatics;
@@ -272,18 +280,18 @@ public class Class {
 
     public static Class[] populatedData() {
         return new Class[] {
-                new Class(1, "Barbarian", 12, "false", "true", "false", "true", "false", "false", "false", "true", "false", "false", "true", "true", "false", "false", "false", "false", "false", "true"),
-                new Class(2, "Bard", 8, "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true"),
-                new Class(3, "Cleric", 8, "false", "false", "false", "false", "false", "true", "true", "false", "false", "true", "false", "false", "false", "true", "true", "false", "false", "false"),
-                new Class(4, "Druid", 8, "true", "true", "false", "true", "false", "true", "true", "true", "false", "false", "false", "true", "false", "false", "false", "false", "false", "true"),
-                new Class(5, "Fighter", 10, "true", "true", "false", "true", "false", "true", "true", "true", "false", "false", "false", "true", "false", "false", "false", "false", "false", "true"),
-                new Class(6, "Monk", 8, "true", "false", "false", "true", "false", "true", "true", "false", "false", "false", "false", "false", "false", "false", "true", "false", "true", "false"),
-                new Class(7, "Paladin", 10, "false", "false", "false", "true", "false", "false", "true", "true", "false", "true", "false", "false", "false", "true", "true", "false", "false", "false"),
-                new Class(8, "Ranger", 10, "false", "true", "false", "true", "false", "false", "true", "false", "true", "false", "true", "true", "false", "false", "false", "false", "true", "true"),
-                new Class(9, "Rogue", 8, "true", "false", "false", "true", "true", "false", "true", "true", "true", "false", "false", "true", "true", "true", "false", "true", "true", "false"),
-                new Class(10, "Sorcerer", 6, "false", "false", "true", "false", "true", "false", "true", "true", "false", "false", "false", "false", "false", "true", "true", "false", "false", "false"),
-                new Class(11, "Warlock", 8, "false", "false", "true", "false", "true", "true", "false", "true", "true", "false", "true", "false", "false", "false", "true", "false", "false", "false"),
-                new Class(12, "Wizard", 6, "false", "false", "true", "false", "false", "true", "true", "false", "true", "true", "false", "false", "false", "false", "true", "false", "false", "false")
+                new Class(1, "Barbarian", 12, 2, "false", "true", "false", "true", "false", "false", "false", "true", "false", "false", "true", "true", "false", "false", "false", "false", "false", "true"),
+                new Class(2, "Bard", 8, 2, "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true", "true"),
+                new Class(3, "Cleric", 8, 2, "false", "false", "false", "false", "false", "true", "true", "false", "false", "true", "false", "false", "false", "true", "true", "false", "false", "false"),
+                new Class(4, "Druid", 8, 2, "true", "true", "false", "true", "false", "true", "true", "true", "false", "false", "false", "true", "false", "false", "false", "false", "false", "true"),
+                new Class(5, "Fighter", 10, 2, "true", "true", "false", "true", "false", "true", "true", "true", "false", "false", "false", "true", "false", "false", "false", "false", "false", "true"),
+                new Class(6, "Monk", 8, 2, "true", "false", "false", "true", "false", "true", "true", "false", "false", "false", "false", "false", "false", "false", "true", "false", "true", "false"),
+                new Class(7, "Paladin", 10, 2, "false", "false", "false", "true", "false", "false", "true", "true", "false", "true", "false", "false", "false", "true", "true", "false", "false", "false"),
+                new Class(8, "Ranger", 10, 3, "false", "true", "false", "true", "false", "false", "true", "false", "true", "false", "true", "true", "false", "false", "false", "false", "true", "true"),
+                new Class(9, "Rogue", 8, 4, "true", "false", "false", "true", "true", "false", "true", "true", "true", "false", "false", "true", "true", "true", "false", "true", "true", "false"),
+                new Class(10, "Sorcerer", 6, 2, "false", "false", "true", "false", "true", "false", "true", "true", "false", "false", "false", "false", "false", "true", "true", "false", "false", "false"),
+                new Class(11, "Warlock", 8, 2, "false", "false", "true", "false", "true", "true", "false", "true", "true", "false", "true", "false", "false", "false", "true", "false", "false", "false"),
+                new Class(12, "Wizard", 6, 2, "false", "false", "true", "false", "false", "true", "true", "false", "true", "true", "false", "false", "false", "false", "true", "false", "false", "false")
         };
 
     }

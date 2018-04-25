@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements
         ArrayList<String> languageData = new ArrayList<>((ArrayList<String>) database.languageDAO().loadLanguages());
         ArrayList<Integer> speedData = new ArrayList<>((ArrayList<Integer>) database.raceDAO().loadSpeeds());
         ArrayList<String> skillData = new ArrayList<>((ArrayList<String>) database.skillDAO().loadSkills());
+        ArrayList<Integer> bgLangData = new ArrayList<>((ArrayList<Integer>) database.backgroundDAO().loadExtraLangs());
+        ArrayList<Integer> numSkillsData = new ArrayList<>((ArrayList<Integer>) database.classDAO().loadNumSkills());
 
         Log.d("raceSize", Integer.toString(raceData.size()));
         Log.d("classSize", Integer.toString(classData.size()));
@@ -64,8 +66,8 @@ public class MainActivity extends AppCompatActivity implements
 
         //Log.d("findRace", database.raceDAO().loadRaceInfo("Standard Tiefling").getSubrace());
 
-        for(int i =0; i< classData.size(); i++){
-            Log.d("ClassName", classData.get(i));
+        for(int i =0; i< healthData.size(); i++){
+            Log.d("healthWorking", Integer.toString(healthData.get(i)));
         }
 
         for(int i =0; i< raceData.size(); i++){
@@ -80,6 +82,9 @@ public class MainActivity extends AppCompatActivity implements
         while (i < raceData.size()) {
             startingLangs.add(new ArrayList<String>((Arrays.asList(database.raceDAO().loadLanguage1(raceData.get(i)),
                     database.raceDAO().loadLanguage2(raceData.get(i)), database.raceDAO().loadLanguage3(raceData.get(i))))));
+            Log.d("startingLangsMain", raceData.get(i) + ", " + database.raceDAO().loadLanguage1(raceData.get(i)) + ", " +
+                    database.raceDAO().loadLanguage2(raceData.get(i)) + ", " + database.raceDAO().loadLanguage3(raceData.get(i)));
+
             i++;
         }
 
@@ -90,18 +95,26 @@ public class MainActivity extends AppCompatActivity implements
 
         ArrayList<ArrayList<Boolean>> classSkillData = new ArrayList<>();
         i = 0;
-        while (i < raceData.size()) {
-            classSkillData.add(new ArrayList<Boolean>(Arrays.asList(Boolean.parseBoolean(database.classDAO().loadAcrobatics(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadAnimalHandling(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadArcana(raceData.get(i))),
-                    Boolean.parseBoolean(database.classDAO().loadAthletics(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadDeception(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadHistory(raceData.get(i))),
-                    Boolean.parseBoolean(database.classDAO().loadInsight(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadIntimidation(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadInvestigation(raceData.get(i))),
-                    Boolean.parseBoolean(database.classDAO().loadMedicine(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadNature(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadPerception(raceData.get(i))),
-                    Boolean.parseBoolean(database.classDAO().loadPerformance(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadPersuasion(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadReligion(raceData.get(i))),
-                    Boolean.parseBoolean(database.classDAO().loadSleightOfHand(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadStealth(raceData.get(i))), Boolean.parseBoolean(database.classDAO().loadSurvival(raceData.get(i))))));
+        while (i < classData.size()) {
+            classSkillData.add(new ArrayList<Boolean>(Arrays.asList(Boolean.parseBoolean(database.classDAO().loadAcrobatics(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadAnimalHandling(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadArcana(classData.get(i))),
+                    Boolean.parseBoolean(database.classDAO().loadAthletics(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadDeception(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadHistory(classData.get(i))),
+                    Boolean.parseBoolean(database.classDAO().loadInsight(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadIntimidation(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadInvestigation(classData.get(i))),
+                    Boolean.parseBoolean(database.classDAO().loadMedicine(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadNature(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadPerception(classData.get(i))),
+                    Boolean.parseBoolean(database.classDAO().loadPerformance(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadPersuasion(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadReligion(classData.get(i))),
+                    Boolean.parseBoolean(database.classDAO().loadSleightOfHand(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadStealth(classData.get(i))), Boolean.parseBoolean(database.classDAO().loadSurvival(classData.get(i))))));
+            i++;
+        }
+
+        ArrayList<ArrayList<String>> bgSkillData = new ArrayList<>();
+        i =0;
+        while(i<backgroundData.size()){
+            bgSkillData.add(new ArrayList<String>(Arrays.asList(database.backgroundDAO().loadSkill1(backgroundData.get(i)), database.backgroundDAO().loadSkill2(backgroundData.get(i)))));
             i++;
         }
 
         character = new PlayerCharacter(raceData, classData, backgroundData, skillData, healthData,
-                featureData, traitData, languageData, startingLangs, speedData, modifierData, classSkillData);
+                featureData, traitData, languageData, startingLangs, speedData, modifierData,
+                classSkillData, bgSkillData, bgLangData, numSkillsData);
 
         createButton = findViewById(R.id.createCharButton);
         //Might need to add the view character button here later.

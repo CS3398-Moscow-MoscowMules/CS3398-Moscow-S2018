@@ -28,6 +28,7 @@ public class Classes {
 		return playerClass;
 	}
 
+	public String getPlayerClassString() { return classList.get(playerClass); }
         /**
          * Sets the player's class
          * @param playerClass the class to be given to the player

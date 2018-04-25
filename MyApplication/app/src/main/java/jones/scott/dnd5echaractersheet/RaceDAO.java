@@ -28,13 +28,13 @@ public interface RaceDAO {
     @Query("SELECT * FROM races WHERE subrace = :subrace")
     public Race loadRaceInfo(String subrace);
 
-    @Query("SELECT language1 FROM races WHERE race = :race")
+    @Query("SELECT language1 FROM races WHERE subrace = :race")
     public String loadLanguage1(String race);
 
-    @Query("SELECT language2 FROM races WHERE race = :race")
+    @Query("SELECT language2 FROM races WHERE subrace = :race")
     public String loadLanguage2(String race);
 
-    @Query("SELECT language3 FROM races WHERE race = :race")
+    @Query("SELECT language3 FROM races WHERE subrace = :race")
     public String loadLanguage3(String race);
 
     @Query("SELECT speed FROM races")
